@@ -1,0 +1,443 @@
+@media screen and (min-width: 454px) {
+  .carousel-control-prev {
+    margin-left: 2.5em;
+  }
+
+  .carousel-control-next {
+    margin-right: 3em;
+  }
+
+  .sidebar-post ul li p {
+    margin-top: 0.6em;
+  }
+  .swiper-pagination-2,
+  .swiper-pagination-3 {
+    display: block;
+  }
+  .homepage-03 .p-banner {
+    padding: 8em 3.7em 7em 3.6em;
+  }
+  .homepage-04 .swiper-wrapper {
+    margin-bottom: 6em;
+  }
+  .homepage-04 .Customers-comments p {
+    font-size: 1em;
+  }
+  .timeline-list::before {
+    right: 22px;
+  }
+  .timeline-item {
+    padding-right: 3.25em;
+  }
+  .timeline-bridge {
+    padding-right: 3.25em;
+  }
+  .plan-card {
+    padding: 40px 30px;
+  }
+  .price-amount {
+    font-size: 3em;
+  }
+}
+
+/************************************************/
+@media screen and (min-width: 577px) {
+  .carousel-caption h5 {
+    font-size: 2em;
+  }
+  .services-top {
+    margin-top: -6.5em;
+  }
+  .services-caption figure {
+    display: block;
+  }
+
+  .comingsoon-content .title-comingsoon {
+    font-size: 2.7em;
+  }
+
+  .comingsoon-content .text-comingsoon {
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .comingsoon-content div {
+    margin: 1em;
+  }
+  .basket table tr {
+    text-align: right;
+  }
+
+  .basket table td:nth-of-type(6) {
+    padding-left: 0;
+  }
+  .bill table tr td {
+    padding-right: 1.5em;
+    font-size: 1em;
+  }
+  .swiper-pagination-2,
+  .swiper-pagination-3 {
+    left: 43%;
+    transform: translate(-43%, -50%);
+  }
+  .homepage-03 .Customers-logo {
+    padding-right: 5.5em;
+  }
+  .timeline-content {
+    padding: 1em 1.15em;
+  }
+}
+/************************************************/
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 1.6em;
+  }
+  .carousel-head img {
+    height: 450px;
+  }
+  .carousel-caption {
+    top: 25%;
+  }
+
+  .carousel-caption p {
+    width: 75%;
+    font-size: 1em;
+  }
+  .banner-top .bannertop-content p:nth-of-type(1) {
+    font-size: 2.2em;
+  }
+  .services-top {
+    margin-top: -4em;
+  }
+  .services-top .card {
+    border-radius: 0;
+  }
+  .services-top .servicesright-radius {
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
+  .services-top .servicesleft-radius {
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+  }
+  .services-top .card-title {
+    font-size: 1em;
+  }
+  .services-top .card-text {
+    font-size: 0.9em;
+  }
+  .Counseling .icon-email {
+    display: block;
+  }
+  .title2-left {
+    margin-top: 1em;
+  }
+  .date-blog {
+    font-size: 1em;
+  }
+  .title-blog {
+    font-size: 1em;
+  }
+  .blog .swiper-slide .caption-blog {
+    font-size: 1em;
+  }
+  .blog .user-blog {
+    font-size: 1em;
+  }
+  .services-caption .title-Customers {
+    margin-left: 3em;
+    font-size: 1.2em;
+  }
+  .banner-service P:nth-of-type(2) {
+    font-size: 2em;
+  }
+  .banner-service P:nth-of-type(3) {
+    width: 50%;
+  }
+  .services-caption figure {
+    margin-right: 1em;
+  }
+  .rejister-content {
+    width: 50%;
+  }
+
+  .comingsoon-content .title-comingsoon {
+    font-size: 3em;
+  }
+  .not-found img {
+    width: 50%;
+  }
+  .blog-list .card {
+    font-size: 1em !important;
+  }
+  .sidebar {
+    padding-left: 2em;
+  }
+
+  .sidebar-post ul li p {
+    font-size: 1em;
+    margin-top: 0.2em;
+  }
+  .product-detail .carousel img {
+    height: 450px;
+  }
+  .swiper-pagination-2,
+  .swiper-pagination-3 {
+    left: 45%;
+    transform: translate(-45%, -50%);
+  }
+  .homepage-04 .services-head {
+    padding: 4em 2em;
+  }
+  .plan-card.featured {
+    transform: scale(1.05);
+    margin-bottom: 30px;
+  }
+  .timeline-list::before {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .timeline-item {
+    width: 50%;
+    padding-right: 0;
+    padding-left: 1.75em;
+    margin-bottom: 1.5em;
+  }
+  .timeline-item:nth-of-type(even) {
+    margin-right: 50%;
+    padding-right: 1.75em;
+    padding-left: 0;
+  }
+  .timeline-bridge {
+    justify-content: center;
+    padding-right: 0;
+    margin: -0.15em 0 0.35em;
+  }
+  .timeline-bridge span {
+    transform: rotate(90deg);
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    border: 3px solid var(--color-two);
+    border-radius: 50%;
+    background-color: #f8f8f8;
+  }
+  .timeline-item:nth-of-type(even)::before {
+    right: -6px;
+    left: auto;
+  }
+  .timeline-year {
+    margin-bottom: 0.65em;
+  }
+  .timeline-item:nth-of-type(odd) .timeline-year,
+  .timeline-item:nth-of-type(odd) .timeline-content {
+    margin-left: auto;
+  }
+}
+/************************************************/
+@media screen and (min-width: 992px) {
+  .nav-menu {
+    padding-top: 18px;
+  }
+  .navbar-level {
+    padding: 0 2.8em 1em 2.8em;
+  }
+  .logo {
+    margin-top: 0.5em;
+  }
+
+  .link-user {
+    margin-top: 0.1em;
+  }
+  .carousel-head {
+    margin-top: 0;
+  }
+  .carousel-head img {
+    height: 600px;
+  }
+  .carousel-caption {
+    top: 30%;
+  }
+  .Counseling-title {
+    font-size: 1.5em;
+  }
+
+  .services-top {
+    margin-top: -7em;
+  }
+  .services-top .card-title {
+    font-size: 1.3em;
+  }
+  .services-top .card-text {
+    font-size: 1em;
+  }
+  .parent-services {
+    padding: 3em 3em 1em 3em;
+  }
+  .title2-left {
+    margin-top: 0;
+  }
+  .footer .list-footer-right ul,
+  .footer .list-footer-left ul {
+    width: auto;
+  }
+  .banner-top {
+    height: 400px;
+  }
+  .banner-service P:nth-of-type(2) {
+    font-size: 1.7em;
+  }
+
+  .privacy h3 {
+    font-size: 1.5em;
+  }
+  .myaccount-tab .title-myaccount {
+    font-size: 1.5em;
+  }
+  .error-page nav {
+    z-index: 2;
+  }
+  .about-1 p:nth-of-type(2) {
+    padding-left: 1em;
+  }
+
+  .about-box .aboutbox-text p:nth-of-type(1) {
+    font-size: 1.5em;
+  }
+  .swiper-pagination-2,
+  .swiper-pagination-3 {
+    left: 48%;
+    transform: translate(-48%, -50%);
+  }
+  .homepage-02 .about figure {
+    margin-right: 2.3em;
+  }
+  .homepage-03 .logo2,
+  .homepage-04 .logo2 {
+    margin-top: -3.5em;
+  }
+  .homepage-03 .navbar-toggler,
+  .homepage-04 .navbar-toggler {
+    transform: translateY(0);
+  }
+
+  .homepage-03 .services-2 figure {
+    margin-right: 1.1em;
+  }
+
+  .homepage-03 .carousel-head,
+  .homepage-04 .carousel-head {
+    margin-top: -1.5em;
+  }
+
+  .homepage-04 .nav-menu li a {
+    margin-left: -0.1em;
+  }
+  .homepage-04 .services-2 figure {
+    margin-right: 1.3em;
+  }
+}
+/************************************************/
+@media screen and (min-width: 1200px) {
+  .r-container {
+    max-width: 1200px;
+  }
+  .header-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .logo {
+    margin-left: -3.5em !important;
+  }
+  .nav-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav-menu li {
+    margin-left: 0.2em;
+  }
+  .form-nav-desk {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav-response {
+    margin-top: 3.6em;
+    margin-bottom: 0;
+    display: none;
+  }
+  .nav-menu ul {
+    margin-left: 8em !important;
+  }
+  .user {
+    display: block;
+  }
+  .about-section img {
+    display: block;
+  }
+  .footer .list-footer-right {
+    margin-right: 6em;
+  }
+  .footer .list-footer-left {
+    margin-right: 1.7em;
+  }
+  .describe-project {
+    padding-left: 1.5em;
+  }
+  .services-caption figure {
+    margin-right: 2em;
+  }
+
+  .callus-section .callus-caption {
+    padding-left: 2em;
+  }
+
+  .homepage-03 .nav-menu,
+  .homepage-04 .nav-menu {
+    border-radius: 30px;
+    padding-bottom: 1em;
+    padding-left: 1.5em;
+    width: 98%;
+    margin: 0 auto;
+    height: 60px;
+    background-color: #fbab18;
+    position: relative;
+    z-index: 3;
+  }
+
+  .homepage-03 .nav-menu li a {
+    margin-left: -0.1em;
+  }
+
+  .homepage-03 .nav-menu ul {
+    margin-left: 8em !important;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .homepage-03 .logo-xl,
+  .homepage-04 .logo-xl {
+    opacity: 1;
+  }
+
+  .homepage-03 .link-user,
+  .homepage-04 .link-user {
+    margin-top: 0;
+  }
+  .homepage-03 .Customers-logo {
+    padding-right: 0;
+  }
+  .homepage-04 .nav-menu ul {
+    margin-left: 8em !important;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
