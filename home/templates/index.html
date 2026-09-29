@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-
+{% block title %}صفحه اصلی{% endblock %}
 
 {% block body_class %}homepage-01{% endblock %}
 {% block body_id %}home1{% endblock %}
@@ -25,14 +25,6 @@
 
           </div>
           <div class="carousel-item position-relative">
-            <img src="{% static "images/b-03.jpg" %}" class="d-block w-100" alt="image-slider">
-
-            <div class="carousel-caption">
-              <h5>بهترین کارها با بهترین کیفیت</h5>
-              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
-                متون بلکه روزنامه </p>
-              <a href="contact1.html"><button class="btn-color">با ما تماس بگیرید</button></a>
-            </div>
             <div class="curtain"></div>
 
           </div>
@@ -40,17 +32,6 @@
         </div>
 
         <div class="carousel-control">
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
 

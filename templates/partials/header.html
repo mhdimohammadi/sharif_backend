@@ -40,21 +40,12 @@
       <div class="r-container">
         <nav class="navbar navbar-expand-lg  nav-menu ">
           <div class=" container-fluid ">
-            <a class="navbar-brand" href="index.html"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"></a>
+            <a class="navbar-brand" href="{% url "home:index" %}"><img src="{% static 'images/logo.png' %}" alt="logo" class="logo"></a>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0  ">
                 <li class="nav-item">
-                  <a class="nav-link " aria-current="page" href="index.html">خانه
-                    <i class="fa-solid fa-caret-down me-1"></i>
+                  <a class="nav-link " aria-current="page" href="{% url "home:index" %}">خانه
                   </a>
-                  <div class="thubmenu">
-                    <ul class="dropdown1">
-                      <li><a href="index.html" class="active-thubmenu">صفحه اصلی 1</a></li>
-                      <li><a href="index-02.html">صفحه اصلی 2</a></li>
-                      <li><a href="index-03.html">صفحه اصلی 3</a></li>
-                      <li><a href="index-04.html">صفحه اصلی 4</a></li>
-                    </ul>
-                  </div>
                 </li>
                 <li class="nav-item  ">
                   <a class="nav-link" href="#">صفحات
@@ -64,103 +55,36 @@
                     <ul class="dropdown1">
                       <li><a href="team.html">تیم ما</a></li>
                       <li><a href="projects.html">پروژه ها
-                          <i class="fa-solid fa-caret-down me-1"></i>
+
                         </a>
-                        <div class="thubmenu">
-                          <ul class="dropdown2">
-                            <li><a href="projects.html">پروژه ها</a></li>
-                            <li><a href="project -details.html">جزئیات پروژه</a></li>
-                          </ul>
-                        </div>
                       </li>
                       <li><a href="services1.html">خدمات ما
-                          <i class="fa-solid fa-caret-down me-1"></i>
                         </a>
-                        <div class="thubmenu">
-                          <ul class="dropdown2">
-                            <li><a href="services1.html">خدمات ما 1</a></li>
-                            <li><a href="services2.html">خدمات ما 2</a></li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li><a href="rejister.html">کاربران
-                          <i class="fa-solid fa-caret-down me-1"></i>
-                        </a>
-                        <div class="thubmenu">
-                          <ul class="dropdown2">
-                            <li><a href="login.html">ورود </a></li>
-                            <li><a href="rejister.html">ثبت نام</a></li>
-                            <li><a href="recovery-password.html">فراموشی رمز عبور</a></li>
-                          </ul>
-                        </div>
                       </li>
                       <li><a href="questions.html">سوالات متداول
-                          <i class="fa-solid fa-caret-down me-1"></i>
+
                         </a>
-                        <div class="thubmenu">
-                          <ul class="dropdown2">
-                            <li><a href="questions1.html">سوالات متداول 1</a></li>
-                            <li><a href="questions2.html">سوالات متداول 2</a></li>
-                          </ul>
-                        </div>
+  
                       </li>
-                      <li><a href="search-result.html">نتیجه جستجو</a></li>
-                      <li><a href="plan.html">تعرفه ها</a></li>
-                      <li><a href="coming-soon.html">در دست ساخت</a></li>
-                      <li><a href="conditions.html">قوانین و مقررات</a></li>
-                      <li><a href="privacy.html">حریم خصوصی</a></li>
-                      <li><a href="error.html">صفحه 404</a></li>
                     </ul>
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="blog-grid.html">وبلاگ
-                    <i class="fa-solid fa-caret-down me-1"></i>
                   </a>
-                  <div class="thubmenu">
-                    <ul class="dropdown1">
-                      <li><a href="blog-grid.html">وبلاگ شبکه ای</a></li>
-                      <li><a href="blog-sidebar.html">وبلاگ سایدبار</a></li>
-                      <li><a href="blog-details.html">جزئیات وبلاگ</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="products.html"> فروشگاه
-                    <i class="fa-solid fa-caret-down me-1"></i>
-                  </a>
-                  <div class="thubmenu">
-                    <ul class="dropdown1">
-                      <li><a href="products.html">محصولات</a></li>
-                      <li><a href="product-detail.html">جزئیات محصول</a></li>
-                      <li><a href="basket.html">سبد خرید</a></li>
-                      <li><a href="empty-basket.html">سبد خرید خالی</a></li>
-                      <li><a href="bill.html">صورتحساب</a></li>
-                      <li><a href="my-account.html">حساب کاربری</a></li>
-                    </ul>
-                  </div>
+
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="aboutus1.html">درباره ما
-                    <i class="fa-solid fa-caret-down me-1"></i>
+
                   </a>
-                  <div class="thubmenu">
-                    <ul class="dropdown1">
-                      <li><a href="aboutus1.html">درباره ما 1</a></li>
-                      <li><a href="aboutus2.html">درباره ما 2</a></li>
-                    </ul>
-                  </div>
+
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact1.html">تماس با ما
-                    <i class="fa-solid fa-caret-down me-1"></i> </a>
-                  <div class="thubmenu">
-                    <ul class="dropdown1">
-                      <li><a href="contact1.html">تماس با ما 1</a></li>
-                      <li><a href="contact2.html">تماس با ما 2</a></li>
-                    </ul>
-                  </div>
+                  <a class="nav-link" href="contact1.html">تماس با ما</a>
+
                 </li>
+                  
               </ul>
               <form class="position-relative form-nav-desk" role="search">
                 <input class="form-control me-2  input-navbar" type="search" placeholder="جستجو..."
