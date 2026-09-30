@@ -1,1 +1,1 @@
-from . import home
+from home.admin import home
