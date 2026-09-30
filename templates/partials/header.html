@@ -6,11 +6,13 @@
       <div class="r-container ">
         <div class="header-top">
           <div class="  col-lg-6 text-right  d-flex">
-            <div style="margin-right: 0.5em;"> <span class="icon-right-headertop"><i
-                  class="fa-solid fa-envelope"></i></span><span class="text-right-headertop">example@gmail.com</span>
+            <div style="margin-right: 0.5em;"> <span class="icon-right-headertop"><i class="fa-solid fa-envelope"></i></span>
+                <span class="text-right-headertop">
+                {{ site_settings.company_email }}
+                </span>
             </div>
             <div class="pe-lg-3"><span class="icon-right-headertop"><i class="fa-solid fa-phone"></i></span><span
-                class="text-right-headertop ">02135011251</span></div>
+                class="text-right-headertop ">{{ site_settings.company_phone }}</span></div>
           </div>
           <div class=" col-lg-6 text-left ">
             <ul class=" social-header-top d-flex justify-content-end align-content-center ">

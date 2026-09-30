@@ -13,12 +13,11 @@
 
         <div class="carousel-inner">
           <div class="carousel-item active position-relative">
-            <img src="{% static "images/b-04.jpg" %}" class="d-block w-100" alt="image-slider">
+            <img src="{{ site_settings.banner.url }}" class="d-block w-100" alt="image-slider">
 
             <div class="carousel-caption">
-              <h5>رویای خود را بسازید</h5>
-              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
-                متون بلکه روزنامه </p>
+              <h5>{{ site_settings.main_title }}</h5>
+              <p>{{ site_settings.short_description }}</p>
               <a href="contact1.html"><button class="btn-color">با ما تماس بگیرید</button></a>
             </div>
             <div class="curtain"></div>
@@ -47,10 +46,8 @@
             <div class="card h-100 services-borderbottom servicesright-radius">
               <span class="icon-services"><i class="fa-solid fa-pen-to-square"></i></span>
               <div class="card-body">
-                <p class="card-title ">کد نویسی استاندارد</p>
-                <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                  گرافیک
-                  است</p>
+                <p class="card-title ">{{ site_settings.card3_title }}</p>
+                <p class="card-text">{{ site_settings.card3_description }}</p>
               </div>
             </div>
           </div>
@@ -58,10 +55,8 @@
             <div class="card h-100 services-center">
               <span class="icon-services"><i class="fa-solid fa-gears"></i></span>
               <div class="card-body">
-                <p class="card-title ">شخصی سازی آسان</p>
-                <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                  گرافیک
-                  است</p>
+                <p class="card-title ">{{ site_settings.card2_title }}</p>
+                <p class="card-text">{{ site_settings.card2_description }}</p>
               </div>
             </div>
           </div>
@@ -69,10 +64,8 @@
             <div class="card h-100 services-borderbottom servicesleft-radius">
               <span class="icon-services"><i class="fa-solid fa-thumbs-up"></i></span>
               <div class="card-body">
-                <p class="card-title ">طراحی جذاب</p>
-                <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                  گرافیک
-                  است</p>
+                <p class="card-title ">{{ site_settings.card1_title }}</p>
+                <p class="card-text">{{ site_settings.card3_description }}</p>
               </div>
             </div>
           </div>
