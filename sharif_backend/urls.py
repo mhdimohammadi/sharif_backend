@@ -13,6 +13,7 @@ admin.site.index_title = "Welcome to the admin panel"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls', namespace='home')),
+    path('team/',include('team.urls', namespace='team')),
 ]
 
 if settings.DEBUG:

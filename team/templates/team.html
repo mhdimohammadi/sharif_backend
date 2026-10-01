@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}تیم ما{% endblock %}
+
+
+{% block content %}
+      <!-- -------------------------start banner top----------------------------- -->
+
+      <section>
+        <div class="banner-top">
+          <div class="bannertop-content">
+            <div>
+              <p>تیم ما</p>
+              <div class="text-center">
+                <a href="{% url "home:index" %}">خانه</a
+                ><span class="bannertop-icon"
+                  ><i class="fa-solid fa-angle-left"></i></span
+                ><span class="bannertop-index">تیم ما</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ---------------------------end banner top------------------------------ -->
+
+      <!-- ---------------------------start team----------------------------- -->
+      <section class="team level">
+        <div class="r-container">
+          <h3 class="title">اعضای تیم ما</h3>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+              {% for member in members %}
+            <div class="col">
+              <div class="card position-relative">
+                <figure>
+                  <img
+                    src="{{ member.default_image_fallback }}"
+                    class="card-img-top"
+                    alt="{{ member.name }}"
+                  />
+                </figure>
+
+                <div class="card-body">
+                  <p class="card-title">{{ member.name }}</p>
+
+                  <p class="card-text">{{ member.speciality }}</p>
+                  <div class=" ">
+                    <ul
+                      class="social-header-top social-team d-flex justify-content-center align-content-center"
+                    >
+                      <a href="">
+                        <li><i class="fa-brands fa-whatsapp"></i></li>
+                      </a>
+                      <a href="">
+                        <li><i class="fa-brands fa-instagram"></i></li>
+                      </a>
+                      <a href="">
+                        <li><i class="fa-brands fa-linkedin-in"></i></li>
+                      </a>
+                      <a href="">
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                      </a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <!-- ---------------------------end team----------------------------- -->
+{% endblock %}
+
