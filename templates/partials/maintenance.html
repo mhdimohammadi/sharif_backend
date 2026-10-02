@@ -1,0 +1,82 @@
+{% load static %}
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>خطا 404</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/fontawesome.min.css" %}" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link rel="stylesheet" href="{% static "css/scope.css" %}" />
+  </head>
+
+  <body class="error-page">
+    <!-- ---------------------------start back to top---------------------------->
+    <button onclick="topFunction()" id="myBtn">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <!-- ---------------------------end back to top---------------------------->
+    <header>
+      <!-- ---------------------------start header top---------------------------->
+      <section class="bg-theme r-border-bottom">
+        <div class="level">
+          <div class="r-container">
+            <div class="header-top">
+              <div class="col-lg-6 text-right d-flex">
+                <div style="margin-right: 0.5em">
+                  <span class="icon-right-headertop"
+                    ><i class="fa-solid fa-envelope"></i></span
+                  ><span class="text-right-headertop">{{ site_settings.company_email }}</span>
+                </div>
+                <div class="pe-lg-3">
+                  <span class="icon-right-headertop"
+                    ><i class="fa-solid fa-phone"></i></span
+                  ><span class="text-right-headertop">{{ site_settings.company_phone }}</span>
+                </div>
+              </div>
+              <div class="col-lg-6 text-left">
+                <ul
+                  class="social-header-top d-flex justify-content-end align-content-center"
+                >
+                  <a href="">
+                    <li><i class="fa-brands fa-whatsapp"></i></li>
+                  </a>
+                  <a href="">
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                  </a>
+                  <a href="">
+                    <li><i class="fa-brands fa-linkedin-in"></i></li>
+                  </a>
+                  <a href="">
+                    <li><i class="fa-brands fa-facebook-f"></i></li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <!-- --------------------------start not found------------------------------->
+      <section class="not-found">
+        <div class="r-container">
+          <div class="level">
+            <div class="content-notfound">
+              <span>503</span>
+              <p class="fw-bold fs-4">maintenance</p>
+              <p class="my-4">سایت در حال به روز رسانی می باشد لطفا لحظاتی دیگر تلاش کنید</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ---------------------------end not found-------------------------------->
+    </main>
+    <!-- ---------------------------start footer-------------------------------->
+
+    <!-- ---------------------------end footer-------------------------------->
+  </body>
+  <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+  <script src="{% static "js/all.min.js" %}"></script>
+  <script src="{% static "js/javaScript.js" %}"></script>
+</html>

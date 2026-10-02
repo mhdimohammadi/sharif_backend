@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'sharif_backend.middleware.SiteMaintenanceMiddleware',
 ]
 
 ROOT_URLCONF = 'sharif_backend.urls'

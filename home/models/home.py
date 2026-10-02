@@ -61,6 +61,13 @@ class Home(models.Model):
         verbose_name= "ایمیل شرکت",
     )
 
+
+    site_is_active = models.BooleanField(
+        default=True,
+        verbose_name= 'فعالی/غیر فعالی سایت'
+    )
+
+
     class Meta:
         verbose_name = "صفحه اصلی"
         verbose_name_plural = "تنظیمات صفحه اصلی"

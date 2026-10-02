@@ -40,3 +40,14 @@ class Article(models.Model):
         default=True,
         verbose_name= 'فعال/غیر فعال'
     )
+
+    class Meta:
+        verbose_name = 'مقاله'
+        verbose_name_plural = 'مقالات'
+
+
+        indexes = [
+            models.Index(
+                fields=['created_at']
+            )
+        ]
