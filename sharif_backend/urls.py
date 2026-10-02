@@ -3,9 +3,9 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.site.site_header = "Raymand Sharif Admin Panel"
-admin.site.site_title = "Admin Panel"
-admin.site.index_title = "Welcome to the admin panel"
+admin.site.site_header = "پنل ادمین رایمند شریف"
+admin.site.site_title = "پنل ادمین"
+admin.site.index_title = "به پنل ادمین خوش آمدید"
 
 
 

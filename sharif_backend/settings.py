@@ -32,6 +32,11 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     'home.apps.HomeConfig',
     'team.apps.TeamConfig',
+
+    # My Packages
+    'django_jalali'
+
+
 ]
 
 MIDDLEWARE = [
@@ -109,12 +114,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-ir'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
-
 USE_TZ = True
 
 
