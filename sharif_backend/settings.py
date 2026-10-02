@@ -11,8 +11,12 @@ SECRET_KEY = config('SECRET_KEY',cast=str)
 
 DEBUG = config('DEBUG',cast=bool)
 
-ALLOWED_HOSTS = []
 
+
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['www.raymandsharif.com','raymandsharif.com']
 
 
 
