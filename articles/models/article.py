@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django_jalali.db import models as jmodels
 from django.conf import settings
 
@@ -25,6 +26,13 @@ class Article(models.Model):
         verbose_name= 'محتوای  مقاله',
     )
 
+    image = models.ImageField(
+        upload_to='articles/',
+        verbose_name= "تصویر مقاله",
+        null=True,
+        blank=True,
+    )
+
 
     created_at = jmodels.jDateTimeField(
         auto_now_add=True,
@@ -41,6 +49,12 @@ class Article(models.Model):
         verbose_name= 'فعال/غیر فعال'
     )
 
+    priority = models.PositiveIntegerField(
+        default=0,
+        verbose_name= "الویت نمایش",
+        help_text= "هرچه عدد بالاتر باشد الویت نمایش مقاله بیشتر است",
+    )
+
     class Meta:
         verbose_name = 'مقاله'
         verbose_name_plural = 'مقالات'
@@ -48,6 +62,15 @@ class Article(models.Model):
 
         indexes = [
             models.Index(
-                fields=['created_at']
+                fields=['priority'],
             )
         ]
+
+
+
+    # def get_absolute_url(self):
+    #     return reverse("game:game_detail", args=[self.id])
+
+
+    def __str__(self):
+        return f"{self.author}: {self.title}"
