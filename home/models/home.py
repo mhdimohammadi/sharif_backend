@@ -16,6 +16,13 @@ class Home(models.Model):
         verbose_name="توضیح کوتاه",
     )
 
+    footer_description = models.TextField(
+        verbose_name= "توضیحات فوتر",
+        null=True,
+        blank=True,
+        default= "رایمند شریف"
+    )
+
     banner = models.ImageField(
         upload_to="home/banners",
         verbose_name= "بنر سایت",

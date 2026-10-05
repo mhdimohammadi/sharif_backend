@@ -437,7 +437,10 @@
             <div class="swiper-slide">
               <div class="content-swiper-slider">
                 <a href="blog-details.html">
-                  <figure class="figure-blog"><img src="{{ article.image.url }}" alt="image-blog" class="img-blog">
+                  <figure class="figure-blog">
+                      {% if article.image %}
+                      <img src="{{ article.image.url }}" alt="image-blog" class="img-blog">
+                      {% endif %}
                   </figure>
                 </a>
                 <div class="pt-1 px-2">
