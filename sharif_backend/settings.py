@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'articles.apps.ArticlesConfig',
     'home.apps.HomeConfig',
     'team.apps.TeamConfig',
+    'projects.apps.ProjectsConfig',
 
     # My Packages
     'django_jalali'
