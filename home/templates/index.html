@@ -427,49 +427,50 @@
     </section>
     <!-- ---------------------------end Customers -------------------------------- -->
     <!-- ---------------------------start blog-------------------------------- -->
-    <section class=" blog level ">
+      <section class="blog level">
       <div class="r-container">
         <h3 class="title">آخرین وبلاگ و مطالب ما</h3>
         <div class="swiper swiper-container">
-          {% if articles %}
-          {% for article in articles %}
+
           <div class="swiper-wrapper">
+            {% for article in articles %}
             <div class="swiper-slide">
               <div class="content-swiper-slider">
                 <a href="blog-details.html">
                   <figure class="figure-blog">
-                      {% if article.image %}
-                      <img src="{{ article.image.url }}" alt="image-blog" class="img-blog">
-                      {% endif %}
+                    {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="image-blog" class="img-blog">
+                    {% endif %}
                   </figure>
                 </a>
                 <div class="pt-1 px-2">
                   <div class="date-blog">
-                    <span><i class="fa-solid fa-calendar-days ps-1"></i><span>{{article.created_at|date:"Y/m/d" }}</span> </span>
+                    <span><i class="fa-solid fa-calendar-days ps-1"></i><span>{{ article.created_at|date:"Y/m/d" }}</span></span>
                   </div>
                   <div class="mt-4 mx-3">
                     <a href="blog-details.html">
-                      <p class="title-blog ">{{ article.title }}</p>
+                      <p class="title-blog">{{ article.title }}</p>
                     </a>
-                    <p class="caption-blog ">{{ article.content|truncatewords:25 }}</p>
+                    <p class="caption-blog">{{ article.content|truncatewords:7 }}</p>
                   </div>
-
-                  <div class=" px-3 pb-4 mt-1 ">
+                  <div class="px-3 pb-4 mt-1">
                     <div class="more-blog">
                       <a href="blog-details.html" class="text-warning">
                         <span>ادامه مطلب</span>
-                        <span>
-                          <i class="fa-solid fa-arrow-left  "></i></span>
+                        <span><i class="fa-solid fa-arrow-left"></i></span>
                       </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            {% empty %}
+            <p class="text-center">هنوز مقاله‌ای ثبت نشده است.</p>
+            {% endfor %}
           </div>
-          {% endfor %}
-          {% endif %}
+
         </div>
+      </div>
     </section>
     <!-- ---------------------------end blog-------------------------------- -->
   </main>
