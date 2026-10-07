@@ -1,0 +1,227 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}درباره ما{% endblock %}
+
+
+{% block body_id %}about-us{% endblock %}
+
+{% block content %}
+    <main>
+      <!-- ---------------------------start banner top------------------------------>
+
+      <section>
+        <div class="banner-top">
+          <div class="bannertop-content">
+            <div>
+              <p>درباره ما</p>
+              <div class="text-center">
+                <a href="{% url "home:index" %}">خانه</a
+                ><span class="bannertop-icon"
+                  ><i class="fa-solid fa-angle-left"></i
+                ></span>
+                <span class="bannertop-index">درباره ما</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------end banner top---------------------------- -->
+      <!-- ---------------------------start about us---------------------------- -->
+      <section class="level">
+        <div class="r-container">
+          <div class="row about-1">
+            <h3 class="title">درباره شرکت</h3>
+            <div class="col-12 col-sm-12 col-md-12 col-xl-7 mt-3">
+              <p class="text-black fw-bold">درباره اهداف شرکت</p>
+              <p>{{ site_settings.goal }}</p>
+            </div>
+
+            <div class="d-none d-md-block col-md-12 col-xl-5 mt-3 mx-auto">
+              <figure>
+                <img src="{% static "images/h-22.jpg" %}" alt="about-company" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------end about us---------------------------->
+      <!-- -------------------------- start timeline section --------------------- -->
+      <section class="level company-timeline">
+        <div class="r-container">
+          <h3 class="title">مسیر رشد شرکت</h3>
+          <div class="timeline-list">
+            <article class="timeline-item">
+              <div class="timeline-year">۱۳۹۵</div>
+              <div class="timeline-content">
+                <span class="timeline-icon"
+                  ><i class="fa-solid fa-flag"></i
+                ></span>
+                <div>
+                  <h4>شروع یک ایده</h4>
+                  <p>
+                    با هدف ساختن تجربه‌ای متفاوت، فعالیت شرکت را با یک تیم کوچک
+                    و پرانرژی آغاز کردیم.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <div class="timeline-bridge">
+              <span><i class="fa-solid fa-arrow-down"></i></span>
+              <p>
+                اعتماد به ایده، اولین قدم ما برای ساختن آینده‌ای ماندگار بود.
+              </p>
+            </div>
+            <article class="timeline-item">
+              <div class="timeline-year">۱۳۹۸</div>
+              <div class="timeline-content">
+                <span class="timeline-icon"
+                  ><i class="fa-solid fa-people-group"></i
+                ></span>
+                <div>
+                  <h4>گسترش تیم</h4>
+                  <p>
+                    همکاری با متخصصان تازه، دامنه خدمات ما را گسترده‌تر و
+                    راهکارها را کامل‌تر کرد.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <div class="timeline-bridge">
+              <span><i class="fa-solid fa-arrow-down"></i></span>
+              <p>با رشد تیم، کیفیت و گستره راهکارهای ما نیز هر روز بیشتر شد.</p>
+            </div>
+            <article class="timeline-item">
+              <div class="timeline-year">۱۴۰۱</div>
+              <div class="timeline-content">
+                <span class="timeline-icon"
+                  ><i class="fa-solid fa-briefcase"></i
+                ></span>
+                <div>
+                  <h4>اعتماد مشتریان</h4>
+                  <p>
+                    با اجرای پروژه‌های موفق، همکاری‌های بلندمدت و اعتماد مشتریان
+                    ارزشمندمان را به دست آوردیم.
+                  </p>
+                </div>
+              </div>
+            </article>
+            <div class="timeline-bridge">
+              <span><i class="fa-solid fa-arrow-down"></i></span>
+              <p>
+                تجربه‌های ارزشمند، مسیر ما را برای قدم‌های بزرگ‌تر روشن کردند.
+              </p>
+            </div>
+            <article class="timeline-item">
+              <div class="timeline-year">امروز</div>
+              <div class="timeline-content">
+                <span class="timeline-icon"
+                  ><i class="fa-solid fa-arrow-trend-up"></i
+                ></span>
+                <div>
+                  <h4>نگاه به آینده</h4>
+                  <p>
+                    با تکیه بر تجربه و خلاقیت، برای ساختن راهکارهای بهتر و
+                    آینده‌ای روشن‌تر حرکت می‌کنیم.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- -------------------------- end timeline section ----------------------- -->
+      <!-- ---------------------------start banner----------------------------->
+      <section>
+        <div class="banner level">
+          <div class="r-container">
+            <div class="content-banner position-relative z-2 p-banner">
+              <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 pt-5">
+                <div class="col">
+                  <div class="card h-100 text-center bg-transparent py-4">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-center">
+                        <span class="text-warning"
+                          ><i class="fa-solid fa-people-group"></i
+                        ></span>
+                        <p id="customersCounter" class="card-title">0</p>
+                      </div>
+
+                      <p class="card-text text-white">مشتریان راضی</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 bg-transparent py-4">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-center">
+                        <span class="text-warning"
+                          ><i class="fa-solid fa-briefcase"></i
+                        ></span>
+                        <p id="projectsCounter" class="card-title">0</p>
+                      </div>
+
+                      <p class="card-text text-white">پروژه انجام شده</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 bg-transparent py-4">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-center">
+                        <span class="text-warning"
+                          ><i class="fa-solid fa-handshake"></i
+                        ></span>
+                        <p id="partnersCounter" class="card-title">0</p>
+                      </div>
+
+                      <p class="card-text text-white">شرکای تجاری</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100 bg-transparent py-4">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-center">
+                        <span class="text-warning"
+                          ><i class="fa-solid fa-building"></i
+                        ></span>
+                        <p id="currentProjectsCounter" class="card-title">0</p>
+                      </div>
+
+                      <p class="card-text text-white">پروژه های فعلی</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ---------------------------end banner---------------------------->
+
+      <!-- ---------------------------start our features--------------------->
+      <section class="level about-service features">
+        <div class="r-container">
+          <h3 class="title">ویژگی های ما</h3>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-5">
+            {% for feature in features %}
+            <div class="col">
+              <div class="card h-100">
+                <span><i class="fa-solid fa-house"></i></span>
+                <div class="card-body">
+                  <p class="card-title">{{ feature.title }}</p>
+                  <p class="card-text">{{ feature.description }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------------------------end our features------------------------->
+    </main>
+{% endblock %}

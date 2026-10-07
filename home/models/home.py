@@ -23,6 +23,13 @@ class Home(models.Model):
         default= "رایمند شریف"
     )
 
+
+    goal = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name= "اهداف شرکت",
+    )
+
     banner = models.ImageField(
         upload_to="home/banners",
         verbose_name= "بنر سایت",

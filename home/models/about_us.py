@@ -1,58 +1,34 @@
 from django.db import models
 
 
-class AboutUs(models.Model):
 
-    goal = models.TextField(
-        verbose_name= "اهداف شرکت",
+class Feature(models.Model):
+
+    title = models.CharField(
+        max_length=50,
+        verbose_name='تایتل ویژگی',
     )
 
-    pros1_title = models.CharField(
-        max_length=100,
-        verbose_name= "ویژگی اول",
+    description = models.TextField(
+        max_length=150,
+        verbose_name='توضیح ویژگی',
     )
 
-    pros1_description = models.TextField(
-        max_length=300,
-        verbose_name= "توضیح ویژگی اول",
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name= "فعلی/غیر فعالی",
     )
 
-    pros2_title = models.CharField(
-        max_length=100,
-        verbose_name= "ویژگی دوم",
+    priority = models.IntegerField(
+        default=0,
+        verbose_name= "الویت نمایش",
     )
-
-    pros2_description = models.TextField(
-        max_length=300,
-        verbose_name= "توضیح ویژگی دوم",
-    )
-
-    pros3_title = models.CharField(
-        max_length=100,
-        verbose_name= "ویژگی سوم",
-    )
-
-    pros3_description = models.TextField(
-        max_length=300,
-        verbose_name= "توضیح ویژگی سوم",
-    )
-
-    pros4_title = models.CharField(
-        max_length=100,
-        verbose_name= "ویژگی چهارم",
-    )
-
-    pros4_description = models.TextField(
-        max_length=300,
-        verbose_name= "توضیح ویژگی چهارم",
-    )
-
-
 
     class Meta:
-        verbose_name = "درباره ما"
-        verbose_name_plural = "درباره ما"
+        verbose_name = "ویژگی"
+        verbose_name_plural = "ویژگی ها"
+        ordering = ['-priority']
 
 
-    def __str__(self):
-        return f"درباره ما : {self.pk}"
+class TimeLine(models.Model):
+    pass

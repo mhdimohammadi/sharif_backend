@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django_jalali.db import models as jmodels
 from django.conf import settings
+from django.templatetags.static import static
 
 
 
@@ -74,3 +75,14 @@ class Article(models.Model):
 
     def __str__(self):
         return f"{self.author}: {self.title}"
+
+
+    # =============================
+    # returns default image is there is no articles picture
+    # =============================
+    @property
+    def default_image_fallback(self):
+         if self.image:
+             return self.image.url
+
+         return  static('images/default_article.jpg')
