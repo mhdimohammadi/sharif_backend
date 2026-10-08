@@ -53,27 +53,28 @@
         <div class="r-container">
           <h3 class="title">مسیر رشد شرکت</h3>
           <div class="timeline-list">
+            {% for timeline in timelines %}
             <article class="timeline-item">
-              <div class="timeline-year">۱۳۹۵</div>
+              <div class="timeline-year">{{ timeline.year }}</div>
               <div class="timeline-content">
                 <span class="timeline-icon"
                   ><i class="fa-solid fa-flag"></i
                 ></span>
                 <div>
-                  <h4>شروع یک ایده</h4>
-                  <p>
-                    با هدف ساختن تجربه‌ای متفاوت، فعالیت شرکت را با یک تیم کوچک
-                    و پرانرژی آغاز کردیم.
-                  </p>
+                  <h4>{{ timeline.title }}</h4>
+                  <p>{{ timeline.description }}</p>
                 </div>
               </div>
             </article>
             <div class="timeline-bridge">
               <span><i class="fa-solid fa-arrow-down"></i></span>
               <p>
-                اعتماد به ایده، اولین قدم ما برای ساختن آینده‌ای ماندگار بود.
+                {% if timeline.bridge_text %}{{ timeline.bridge_text }}{% endif %}
               </p>
             </div>
+            {% empty %}
+                تایم لاینی وجود ندارد
+            {% endfor %}
           </div>
         </div>
       </section>

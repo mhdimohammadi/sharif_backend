@@ -80,7 +80,7 @@ class TimeLine(models.Model):
         verbose_name = "خط زمانی"
         verbose_name_plural = "خط های زمانی"
 
-        ordering = ['-year']
+        ordering = ['year']
 
 
 
