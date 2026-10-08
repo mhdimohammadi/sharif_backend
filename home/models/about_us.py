@@ -34,6 +34,8 @@ class Feature(models.Model):
         return f"{self.title} : {self.description}"
 
 
+
+
 class TimeLine(models.Model):
 
     title = models.CharField(
@@ -63,3 +65,20 @@ class TimeLine(models.Model):
         verbose_name= "سال تایم لاین",
         default=1900,
     )
+
+
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name= "فعالی/غیر فعالی",
+    )
+
+
+    class Meta:
+
+        verbose_name = "خط زمانی"
+        verbose_name_plural = "خط های زمانی"
+        ordering = ['-year']
+
+
+    def __str__(self):
+        return f"{self.title} : {self.bridge_text}"
