@@ -66,12 +66,14 @@
                 </div>
               </div>
             </article>
+            {% if timeline.bridge_text %}
             <div class="timeline-bridge">
               <span><i class="fa-solid fa-arrow-down"></i></span>
               <p>
-                {% if timeline.bridge_text %}{{ timeline.bridge_text }}{% endif %}
+              {{ timeline.bridge_text }}
               </p>
             </div>
+            {% endif %}
             {% empty %}
                 تایم لاینی وجود ندارد
             {% endfor %}
