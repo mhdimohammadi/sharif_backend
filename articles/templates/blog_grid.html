@@ -1,0 +1,125 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}مقالات{% endblock %}
+
+
+
+{% block content %}
+      <!----------------------------start banner top--------------------------->
+
+      <section>
+        <div class="banner-top">
+          <div class="bannertop-content">
+            <div>
+              <p>وبلاگ شبکه ای</p>
+              <div class="text-center">
+                <a href="{% url "home:index" %}">خانه</a
+                ><span class="bannertop-icon"
+                  ><i class="fa-solid fa-angle-left"></i></span
+                ><span class="bannertop-index">وبلاگ شبکه ای</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!---------------------------end banner top------------------------------->
+
+      <!-- ---------------------------start blog grid-------------------------------->
+      <section class="level blog-grid">
+        <div class="r-container">
+          <h3 class="title">وبلاگ</h3>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            {% for article in articles %}
+            <div class="col shadow-radius">
+              <div class="card position-relative">
+                <a href="{{ article.get_absolute_url }}">
+                  <figure class="figure-blog">
+                    <img src="{{ article.default_image_fallback }}" alt="image-blog" class="img-blog">
+                  </figure>
+                </a>
+                <div class="px-2 pt-1">
+                  <div class="date-blog">
+                    <span
+                      ><i class="fa-solid fa-calendar-days ps-1"></i
+                      ><span>{{ article.created_at|date:"Y/m/d" }}</span>
+                    </span>
+                  </div>
+                  <div class="mt-4 mx-3">
+                    <a href="{{ article.get_absolute_url }}">
+                      <p class="title-blog">{{ article.title }}</p>
+                    </a>
+                    <p class="caption-blog">{{ article.content|truncatewords:7 }}...</p>
+                  </div>
+                  <div class="px-3 pb-4 mt-1">
+                    <div class="more-blog">
+                      <a href="{{ article.get_absolute_url }}" class="text-warning">
+                        <span>ادامه مطلب</span>
+                        <span> <i class="fa-solid fa-arrow-left"></i></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% empty %}
+                مقاله ای وجود ندارد
+            {% endfor %}
+          </div>
+            {% if articles.has_other_pages %}
+            <div class="d-flex justify-content-center my-5">
+              <nav aria-label="Page navigation">
+                <ul class="pagination text-center mx-auto">
+
+                  {# دکمه قبلی #}
+                  {% if articles.has_previous %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{ articles.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                  {% else %}
+                    <li class="page-item disabled">
+                      <a class="page-link" href="#" aria-label="Previous" tabindex="-1" aria-disabled="true">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                  {% endif %}
+
+                  {# شماره صفحات #}
+                  {% for num in articles.paginator.page_range %}
+                    {% if articles.number == num %}
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                      </li>
+                    {% elif num > articles.number|add:'-3' and num < articles.number|add:'3' %}
+                      <li class="page-item">
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+
+                  {# دکمه بعدی #}
+                  {% if articles.has_next %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{ articles.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  {% else %}
+                    <li class="page-item disabled">
+                      <a class="page-link" href="#" aria-label="Next" tabindex="-1" aria-disabled="true">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  {% endif %}
+                </ul>
+              </nav>
+            </div>
+            {% endif %}
+        </div>
+      </section>
+      <!-- ---------------------------end blog grid-------------------------------->
+{% endblock %}

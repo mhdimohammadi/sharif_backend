@@ -59,7 +59,7 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'مقاله'
         verbose_name_plural = 'مقالات'
-
+        ordering = ['-priority']
 
         indexes = [
             models.Index(
@@ -69,8 +69,8 @@ class Article(models.Model):
 
 
 
-    # def get_absolute_url(self):
-    #     return reverse("game:game_detail", args=[self.id])
+    def get_absolute_url(self):
+        return reverse("articles:article_detail", args=[self.id])
 
 
     def __str__(self):

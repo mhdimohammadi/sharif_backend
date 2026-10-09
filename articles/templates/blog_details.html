@@ -1,0 +1,229 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <!-- -------------------------start banner top----------------------------->
+
+
+
+    <section>
+      <div class="banner-top">
+        <div class="bannertop-content">
+          <div>
+            <p>جزئیات وبلاگ</p>
+            <div class="text-center">
+              <a href="{% url "home:index" %}">خانه</a>
+              <span class="bannertop-icon"><i class="fa-solid fa-angle-left"></i></span>
+              <a href="{% url "articles:articles" %}">وبلاگ</a><span class="bannertop-icon"><i
+                  class="fa-solid fa-angle-left"></i></span>
+              <span class="bannertop-index">جزئیات وبلاگ</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -------------------------end banner top------------------------------>
+
+    <!-- -------------------------start blog details---------------------------------->
+    <section class="level overflow-x-hidden">
+      <div class="r-container">
+        <div class="row">
+
+          <div class="col-lg-4 mt-5 ">
+            <div class="sidebar">
+              <form action="" class="position-relative">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="جستجو..." />
+                  <button type="button" class=" btn-search h-100">
+                    <i class="fa-solid fa-search"></i>
+                  </button>
+                </div>
+              </form>
+
+              <div class="sidebar-category">
+                <p class="sidebar-head">دسته بندی ها</p>
+                <ul>
+                  <a href="">
+                    <li>اخبار</li>
+                  </a>
+                  <a href="">
+                    <li>آموزش </li>
+                  </a>
+                  <a href="">
+                    <li>متفرقه</li>
+                  </a>
+                  <a href="">
+                    <li>عمومی</li>
+                  </a>
+                  <a href="">
+                    <li>تجارت</li>
+                  </a>
+                </ul>
+              </div>
+
+
+              <div class="sidebar-post">
+                <p class="sidebar-head">آخرین مطالب</p>
+                <ul class="mt-4">
+                  <a href="">
+                    <li class="d-flex">
+                      <figure><img src="{% static "images/t-1.jpg" %}" alt=""></figure>
+                      <div>
+                        <p>گزارشات اعتبار و مدیریت آنلاین مالی</p>
+                        <span>20 آبان 1402 </span>
+                      </div>
+                    </li>
+                  </a>
+
+                  <a href="">
+                    <li class="d-flex">
+                      <figure><img src="{% static "images/t-2.jpg" %}" alt=""></figure>
+                      <div>
+                        <p>گزارشات اعتبار و مدیریت آنلاین مالی</p>
+                        <span>20 آبان 1402 </span>
+                      </div>
+                    </li>
+                  </a>
+
+                  <a href="">
+                    <li class="d-flex">
+                      <figure><img src="{% static "images/t-3.jpg" %}" alt=""></figure>
+                      <div>
+                        <p>گزارشات اعتبار و مدیریت آنلاین مالی</p>
+                        <span>20 آبان 1402 </span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="">
+                    <li class="d-flex">
+                      <figure><img src="{% static "images/t-4.jpg" %}" alt=""></figure>
+                      <div>
+                        <p>گزارشات اعتبار و مدیریت آنلاین مالی</p>
+                        <span>20 آبان 1402 </span>
+                      </div>
+                    </li>
+                  </a>
+
+                </ul>
+              </div>
+
+
+              <div class="sidebar-label">
+                <p class="sidebar-head">بر چسب ها</p>
+                <ul class="d-flex flex-wrap">
+                  <a href="">
+                    <li>تجارت</li>
+                  </a>
+                  <a href="">
+                    <li>مشاوره</li>
+                  </a>
+                  <a href="">
+                    <li>بازاریابی</li>
+                  </a>
+                  <a href="">
+                    <li>کسب و کار</li>
+                  </a>
+                  <a href="">
+                    <li>بازرگانی</li>
+                  </a>
+                  <a href="">
+                    <li>سرمایه</li>
+                  </a>
+                  <a href="">
+                    <li>سرمایه گذاری</li>
+                  </a>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="col-lg-8 blog-detail">
+            <h3 class="title2 mt-5 w-100">{{ article.title }}</h3>
+            <ul class="entry-meta d-none d-md-flex">
+              <li>
+                  <i class="fa-solid fa-user "></i><span>{{ article.author.get_full_name|default:user.username}}</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-calendar-days "></i><span>{{ article.created_at|date:"Y/m/d" }}</span>
+              </li>
+              <li><i class="fa-solid fa-comments "></i><span>1 دیدگاه</span></li>
+            </ul>
+
+            <div class="text-justify">
+              <figure><img src="{{ article.default_image_fallback }}" alt="image-blog"></figure>
+              <p class="mt-4 ">{{ article.content }}</p>
+            </div>
+
+            <div class="mt-5 reply-comment">
+
+              <div>
+                <span><i class="fa-solid fa-comments"></i></span>
+                <span class="fw-bold me-2">1 نظر</span>
+              </div>
+
+
+              <hr>
+              <div class="box-comment">
+                <div class="d-flex justify-content-between">
+                  <span class="fw-bold">سعید قربانی</span>
+                  <span>2 اسفند 1402</span>
+                </div>
+                <p class="comment">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                  گرافیک
+                  است.
+                  چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
+                  نیاز
+                  و
+                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
+                <div class="reply"><span><i class="fa-solid fa-reply"></i><span class="me-1">پاسخ</span></span></div>
+
+
+              </div>
+
+
+              <div class=" comment-form">
+                <p>دیدگاه خود را ارسال کنید</p>
+                <p class="text-justify">نظر خود را برای این مطلب ارسال کنید. نشانی ایمیل شما منتشر نخواهد شد.</p>
+                <div class="shadow rounded-3 py-5 px-4 mt-5">
+                  <form action="" class="mt-2">
+
+                    <div class="row row-cols-1 row-cols-md-2">
+
+                      <div class="col mb-4">
+                        <input type="text" class="form-control" placeholder="نام شما" aria-label="Last name">
+                      </div>
+
+                      <div class="col mb-4">
+                        <input type="email" class="form-control " id="exampleFormControlInput1" placeholder="ایمیل شما">
+                      </div>
+
+                    </div>
+
+                    <div class="mb-3">
+                      <textarea class="form-control" placeholder="متن دیدگاه ..." id="exampleFormControlTextarea1"
+                        rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn-color">ارسال دیدگاه</button>
+
+                  </form>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- -------------------------end blog details---------------------------------->
+{% endblock %}
+
+  <!-- -------------------------start footer---------------------------------->

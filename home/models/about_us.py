@@ -27,7 +27,14 @@ class Feature(models.Model):
     class Meta:
         verbose_name = "ویژگی"
         verbose_name_plural = "ویژگی ها"
+
         ordering = ['-priority']
+
+        indexes = [
+            models.Index(
+                fields=['priority'],
+            )
+        ]
 
 
     def __str__(self):
@@ -81,6 +88,12 @@ class TimeLine(models.Model):
         verbose_name_plural = "خط های زمانی"
 
         ordering = ['year']
+
+        indexes = [
+            models.Index(
+                fields=['year'],
+            )
+        ]
 
 
 

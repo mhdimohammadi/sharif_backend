@@ -436,7 +436,7 @@
             {% for article in articles %}
             <div class="swiper-slide">
               <div class="content-swiper-slider">
-                <a href="blog-details.html">
+                <a href="{{ article.get_absolute_url }}">
                   <figure class="figure-blog">
                     <img src="{{ article.default_image_fallback }}" alt="image-blog" class="img-blog">
                   </figure>
@@ -446,14 +446,14 @@
                     <span><i class="fa-solid fa-calendar-days ps-1"></i><span>{{ article.created_at|date:"Y/m/d" }}</span></span>
                   </div>
                   <div class="mt-4 mx-3">
-                    <a href="blog-details.html">
+                    <a href="{{ article.get_absolute_url }}">
                       <p class="title-blog">{{ article.title }}</p>
                     </a>
-                    <p class="caption-blog">{{ article.content|truncatewords:7 }}</p>
+                    <p class="caption-blog">{{ article.content|truncatewords:7 }}...</p>
                   </div>
                   <div class="px-3 pb-4 mt-1">
                     <div class="more-blog">
-                      <a href="blog-details.html" class="text-warning">
+                      <a href="{{ article.get_absolute_url }}" class="text-warning">
                         <span>ادامه مطلب</span>
                         <span><i class="fa-solid fa-arrow-left"></i></span>
                       </a>
