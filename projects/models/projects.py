@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django_jalali.db import models as jmodels
 from django.templatetags.static import static
 
@@ -57,6 +58,12 @@ class Project(models.Model):
         ]
 
 
+
+
+    def get_absolute_url(self):
+        return reverse("projects:project_detail:", args=[self.id])
+
+
     def __str__(self):
         return self.name
 
@@ -66,10 +73,10 @@ class Project(models.Model):
     # =============================
     @property
     def default_image_fallback(self):
-         if self.image:
-             return self.image.url
+         if self.cover_image:
+             return self.cover_image.url
 
-         return  static('images/default_article.jpg')
+         return  static('images/default_project.jpg')
 
 
 

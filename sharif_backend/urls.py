@@ -15,6 +15,7 @@ urlpatterns = [
     path('',include('home.urls', namespace='home')),
     path('team/',include('team.urls', namespace='team')),
     path('articles/',include('articles.urls', namespace='articles')),
+    path('projects/',include('projects.urls', namespace='projects')),
 ]
 
 if settings.DEBUG:
