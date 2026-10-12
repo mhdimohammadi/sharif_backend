@@ -94,7 +94,9 @@
                 <span class="icon-input "><i class="fa-solid fa-magnifying-glass"></i></span>
               </form>
             </div>
-            <a href="rejister.html" class="link-user "><span class="user"><i class="fa-solid fa-user"></i></span></a>
+            {% if request.user.is_authenticated and request.user.is_superuser %}
+            <a href="{% url 'admin:index' %}" class="link-user "><span class="user"><i class="fa-solid fa-user"></i></span></a>
+            {% endif %}
           </div>
         </nav>
       </div>
