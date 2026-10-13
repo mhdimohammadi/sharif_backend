@@ -48,7 +48,7 @@
                 <p class="sidebar-head">آخرین مطالب</p>
                 <ul class="mt-4">
                   {% for article in latest_articles %}
-                  <a href="">
+                  <a href="{{ article.get_absolute_url }}">
                     <li class="d-flex">
                       <figure><img src="{{ article.default_cover_image_fallback }}" alt=""></figure>
                       <div>

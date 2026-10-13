@@ -96,7 +96,7 @@ class Article(models.Model):
 
     @property
     def default_main_image_fallback(self):
-         if self.cover_image:
-             return self.cover_image.url
+         if self.main_image:
+             return self.main_image.url
 
          return  static('images/default_article_main.jpg')

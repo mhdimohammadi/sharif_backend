@@ -3316,4 +3316,24 @@ option {
   color: white;
 }
 
+
+/* همه عکس‌های کارت وبلاگ هم‌اندازه بشن */
+.figure-blog {
+  margin: 0;
+}
+
+.figure-blog .img-blog,
+.blog-grid .img-blog {
+  width: 100%;
+  height: 260px;          /* هر ارتفاعی که دوست داری */
+  object-fit: cover;      /* عکس برش می‌خوره ولی کش نمیاد */
+  object-position: center;
+  display: block;
+}
+
+
+
+
+
+
 /* ******************end plan*********************** */
