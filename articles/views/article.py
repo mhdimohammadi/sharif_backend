@@ -38,13 +38,24 @@ def articles(request):
 
 def article_detail(request, pk):
 
-    try :
-        article = ArticleModel.objects.select_related('author').get(pk=pk)
+    article = get_object_or_404(
+        ArticleModel.objects.select_related('author'),
+        pk=pk,
+        is_active=True,
+    )
 
-    except ObjectDoesNotExist :
-        return redirect("home:index")
+    latest_articles = (
+        ArticleModel.objects
+        .filter(is_active=True)
+        .exclude(pk=article.pk)
+        .only('title', 'cover_image', 'created_at')
+        .order_by('-created_at')[:8]
+    )
 
 
-    context = {"article": article}
+    context = {
+        "article": article,
+        "latest_articles": latest_articles,
+    }
 
     return render(request,"blog_details.html",context)

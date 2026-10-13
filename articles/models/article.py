@@ -27,13 +27,19 @@ class Article(models.Model):
         verbose_name= 'محتوای  مقاله',
     )
 
-    image = models.ImageField(
+    cover_image = models.ImageField(
         upload_to='articles/',
-        verbose_name= "تصویر مقاله",
+        verbose_name= "تصویر کاور مقاله",
         null=True,
         blank=True,
     )
 
+    main_image = models.ImageField(
+        upload_to='articles/',
+        verbose_name= "تصویر اصلی مقاله",
+        null=True,
+        blank=True,
+    )
 
     created_at = jmodels.jDateTimeField(
         auto_now_add=True,
@@ -81,8 +87,16 @@ class Article(models.Model):
     # returns default image is there is no articles picture
     # =============================
     @property
-    def default_image_fallback(self):
-         if self.image:
-             return self.image.url
+    def default_cover_image_fallback(self):
+         if self.cover_image:
+             return self.cover_image.url
 
          return  static('images/default_article.jpg')
+
+
+    @property
+    def default_main_image_fallback(self):
+         if self.cover_image:
+             return self.cover_image.url
+
+         return  static('images/default_article_main.jpg')
