@@ -54,14 +54,17 @@ class Project(models.Model):
         indexes = [
             models.Index(
                 fields=['-start_date'],
-            )
+            ),
+
+            models.Index(
+                fields=['-end_date']
+            ),
         ]
 
 
 
-
     def get_absolute_url(self):
-        return reverse("projects:project_detail:", args=[self.id])
+        return reverse("projects:project_detail", args=[self.id])
 
 
     def __str__(self):

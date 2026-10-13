@@ -79,72 +79,19 @@
       <div class="r-container">
         <h3 class="title">آخرین پروژه ها</h3>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4  projects ">
+          {% for project in projects %}
           <div class="col position-relative">
-            <a href="project -details.html">
+            <a href="{{ project.get_absolute_url }}">
               <div class="card ">
-                <figure><img src="{% static "images/h-10.jpg" %}" class="card-img-top" alt="image-project"></figure>
+                <figure><img src="{{ project.default_image_fallback }}" class="card-img-top" alt="image-project"></figure>
 
                 <div class="card-body ">
-                  <p class="card-title ">پروژه مجتمع تجاری</p>
+                  <p class="card-title ">{{ project.name }}</p>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col  position-relative">
-            <a href="project -details.html">
-              <div class="card ">
-                <figure><img src="{% static "images/h-11.jpg" %}" class="card-img-top" alt="image-project"></figure>
-                <div class="card-body">
-                  <p class="card-title">پروژه پالایشگاه</p>
-
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col  position-relative">
-            <a href="project -details.html">
-              <div class="card ">
-                <figure><img src="{% static "images/default_project.jpg" %}" class="card-img-top" alt="image-project"></figure>
-                <div class="card-body">
-                  <p class="card-title">پروژه آپارتمان</p>
-
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col  position-relative">
-            <a href="project -details.html">
-              <div class="card ">
-                <figure><img src="{% static "images/h-13.jpg" %}" class="card-img-top" alt="image-project"></figure>
-                <div class="card-body">
-                  <p class="card-title">پروژه پالایشگاه</p>
-
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col  position-relative">
-            <a href="project -details.html">
-              <div class="card ">
-                <figure><img src="{% static "images/h-14.jpg" %}" class="card-img-top" alt="image-project"></figure>
-                <div class="card-body">
-
-                  <p class="card-title ">پروژه مجتمع تجاری</p>
-
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col  position-relative">
-            <a href="product-detail.html">
-              <div class="card ">
-                <figure><img src="{% static "images/h-15.jpg" %}" class="card-img-top" alt="image-project"></figure>
-                <div class="card-body">
-                  <p class="card-title">پروژه برج شهر</p>
-                </div>
-              </div>
-            </a>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>
