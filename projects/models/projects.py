@@ -33,6 +33,16 @@ class Project(models.Model):
     verbose_name="نام و نام خانوادگی مشتری",
     )
 
+    location = models.CharField(
+        max_length=50,
+        verbose_name="محل پروژه",
+    )
+
+    worth = models.CharField(
+        max_length=100,
+        verbose_name= "ارزش پروژه",
+    )
+
     is_active = models.BooleanField(
         default=True,
         verbose_name= "فعالی/غیر فعالی",
