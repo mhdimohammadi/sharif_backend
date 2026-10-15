@@ -33,13 +33,19 @@
       <div class="r-container">
         <div class="row ">
           <div class=" d-none d-md-block col-md-12 col-lg-8 mt-3">
-            <figure><img src="{% static 'images/b-27.jpg' %} " alt="image-project" class="img-big"></figure>
+            {% if project.images.big_image %}
+            <figure><img src="{{ project.images.big_image.url }}" alt="image-project" class="img-big"></figure>
+            {% endif %}
           </div>
 
           <div class=" col-12 col-sm-12 col-md-12 col-lg-4 mt-3 mx-auto">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1">
-              <figure class="col"><img src="{% static 'images/h-36.png' %}" alt="image-project" class="img-small"></figure>
-              <figure class="col"><img src="{% static 'images/h-37.png' %}" alt="image-project" class="img-small"></figure>
+              {% if project.images.small_image1  %}
+              <figure class="col"><img src="{{project.images.small_image1.url}}" alt="image-project" class="img-small"></figure>
+              {% endif %}
+              {% if project.images.big_image2 %}
+              <figure class="col"><img src="{{ project.images.big_image2.url }}" alt="image-project" class="img-small"></figure>
+              {% endif %}
             </div>
 
           </div>
