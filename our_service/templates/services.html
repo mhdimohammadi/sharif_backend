@@ -1,0 +1,83 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}خدمات ما{% endblock %}
+
+
+{% block content %}
+
+
+    <!-- ------------------------start banner top------------------------------->
+
+    <section>
+      <div class="banner-top">
+        <div class="bannertop-content">
+          <div>
+            <p>خدمات ما</p>
+            <div class="text-center">
+              <a href="{% url "home:index" %}">خانه</a><span class="bannertop-icon"><i
+                  class="fa-solid fa-angle-left"></i></span><span class="bannertop-index">خدمات ما</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------------------------end banner top------------------------------->
+    <!-- -------------------start professional services-------------------- -->
+
+    <section class="level mt-5">
+      <div class="r-container">
+        <div class="row row-cols-1 row-cols-lg-2">
+
+          <div class="col ps-4 mt-5">
+
+            <h3 class="title2">خدمات حرفه ای ما</h3>
+            <p class="text-justify fw-bold darkblue">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است.
+            </p>
+            <p class="text-justify text-muted mt-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده
+              از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
+              تکنولوژی مورد نیاز است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+              گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+              مورد نیاز است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+              است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و
+              متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است. چاپگرها
+              و
+              متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز است.</p>
+            <a href="contact1.html"><button type="button" class="btn-color mt-3 mb-4">با ما تماس بگیرید</button></a>
+
+          </div>
+          <div class="col mt-5 ">
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 g-4 ">
+
+              {% for service in services %}
+              <div class="col services">
+                <div class="card h-100">
+                  {{ service.get_icon }}
+                  <div class="card-body">
+                    <p class="card-title">{{ service.title }}</p>
+
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------end professional services---------------------------- -->
+
+
+{% endblock %}
+
+

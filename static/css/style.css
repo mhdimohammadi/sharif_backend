@@ -3333,8 +3333,61 @@ option {
 }
 
 
-
-
-
-
 /* ******************end plan*********************** */
+
+
+
+
+
+.logo-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  /* محو شدن لبه‌ها */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  /* حرکت به سمت راست */
+  animation: logo-scroll-right 25s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused; /* با هاور، متوقف میشه */
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-item {
+  margin: 0 2rem;
+  flex-shrink: 0;
+}
+
+.logo-item img {
+  height: 70px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+@keyframes logo-scroll-right {
+  from { transform: translateX(-25%); }
+  to   { transform: translateX(0); }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
+}
+
+@media (max-width: 576px) {
+  .logo-item { margin: 0 1.2rem; }
+  .logo-item img { height: 50px; }
+}

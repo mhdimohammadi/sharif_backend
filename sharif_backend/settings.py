@@ -33,9 +33,11 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'team.apps.TeamConfig',
     'projects.apps.ProjectsConfig',
+    'our_service.apps.OurServiceConfig',
 
     # My Packages
-    'django_jalali'
+    'django_jalali',
+
 
 
 ]

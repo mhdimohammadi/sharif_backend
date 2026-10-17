@@ -295,83 +295,26 @@
     <!-- ---------------------------end team-------------------------------- -->
 
     <!-- ---------------------------start Customers ------------------------------>
-    <section class="Customers level ">
-      <div class="r-container">
-        <div class="row row-cols-1 row-cols-lg-2">
-          <div class="col">
-
-            <p class="title2 text-white w-100">چه کسانی از ما رضایت دارند؟</p>
-
-            <div class="row row-cols-1  row-cols-sm-2 row-cols-md-3 g-4 Customers-logo mt-3">
-              <div class="col">
-                <figure><img src="{% static "images/m-01.png" %}" alt="logo-1"></figure>
-              </div>
-              <div class="col">
-                <figure><img src="{% static "images/m-02.png" %}" alt="logo-2"></figure>
-              </div>
-              <div class="col">
-                <figure><img src="{% static "images/m-03.png" %}" alt="logo-3"></figure>
-              </div>
-              <div class="col">
-                <figure><img src="{% static "images/m-04.png" %}" alt="logo-4" class="mt-3"></figure>
-              </div>
-              <div class="col">
-                <figure><img src="{% static "images/m-05.png" %}" alt="logo-5" class="mt-3"></figure>
-              </div>
-              <div class="col">
-                <figure><img src="{% static "images/m-01.png" %}" alt="logo-6" class="mt-3"></figure>
+<!-- ---------------------------start Customers ------------------------------>
+        {% if icons %}
+        <section class="Customers level">
+          <div class="r-container">
+            <p class="title2 text-white w-100 text-center">چه کسانی از ما رضایت دارند؟</p>
+            <div class="logo-marquee mt-4" dir="ltr">
+              <div class="logo-track">
+                {% for i in "1234" %}
+                <div class="logo-group" {% if not forloop.first %}aria-hidden="true"{% endif %}>
+                  {% for icon in icons %}
+                  <figure class="logo-item">{{ icon.get_icon }}</figure>
+                  {% endfor %}
+                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
-
-
-          <div class="col ">
-            <p class="title2 title2-left w-100">مشتریان ما چه می گویند؟</p>
-            <div id="carouselExampleIndicators" class="carousel slide Customers-carousel ">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                  class="active bg-black" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                  aria-label="Slide 2" class="bg-black"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                  aria-label="Slide 3" class="bg-black"></button>
-              </div>
-              <div class="carousel-inner ">
-                <div class="carousel-item active ">
-                  <div class="d-flex flex-sm-nowrap flex-wrap">
-                    <img src="{% static "images/c-01.png" %}" class="d-block " alt="avatar-01">
-                    <div>
-                      <p class="Customers-carousel-name mt-4 mt-sm-0">رضا صالحی</p>
-                      <p>مدیر مسئول</p>
-                      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="carousel-item">
-                  <div class="d-flex flex-sm-nowrap flex-wrap">
-                    <img src="{% static "images/c-01.png" %}" class="d-block " alt="avatar-02">
-                    <div>
-                      <p class="Customers-carousel-name mt-4 mt-sm-0">علی احمدی</p>
-                      <p>طراح داخلی</p>
-                      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="d-flex flex-sm-nowrap flex-wrap">
-                    <img src="{% static "images/c-01.png" %}" class="d-block " alt="avatar-03">
-                    <div>
-                      <p class="Customers-carousel-name mt-4 mt-sm-0">سجاد امیری</p>
-                      <p>طراح داخلی</p>
-                      <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </section>
+        </section>
+        {% endif %}
+<!-- ---------------------------end Customers -------------------------------- -->
     <!-- ---------------------------end Customers -------------------------------- -->
     <!-- ---------------------------start blog-------------------------------- -->
       <section class="blog level">

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from articles.models import ArticleModel
 from team.models import  TeamModel
 from projects.models import ProjectModel
-
+from home.models import IconModel
 
 
 def index(request):
@@ -19,10 +19,15 @@ def index(request):
         is_active=True
     ).order_by('-end_date')[:6]
 
+    icons = IconModel.objects.filter(
+        is_active=True
+    )
+
     context = {
         "team_members": team_members,
         "articles": articles,
         "projects": projects,
+        "icons": icons
     }
 
     return render(request,"index.html", context)

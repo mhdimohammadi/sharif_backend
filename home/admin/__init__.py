@@ -1,1 +1,1 @@
-from home.admin import home,about_us
+from home.admin import home,about_us,icons
