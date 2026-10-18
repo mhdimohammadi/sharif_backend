@@ -22,6 +22,12 @@ class Service(models.Model):
         default='',
     )
 
+    description = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name= "توضیح",
+        help_text= "توضیحی که برای خدمات در صفحه اصلی نمایش داده میشود",
+    )
 
     priority = models.IntegerField(
         default=0,

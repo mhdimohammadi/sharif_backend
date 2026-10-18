@@ -3,7 +3,7 @@ from articles.models import ArticleModel
 from team.models import  TeamModel
 from projects.models import ProjectModel
 from home.models import IconModel
-
+from our_service.models import ServiceModel
 
 def index(request):
 
@@ -23,11 +23,14 @@ def index(request):
         is_active=True
     )
 
+    services = ServiceModel.objects.all()[0:4]
+
     context = {
         "team_members": team_members,
         "articles": articles,
         "projects": projects,
-        "icons": icons
+        "icons": icons,
+        "services": services,
     }
 
     return render(request,"index.html", context)

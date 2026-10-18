@@ -1,0 +1,110 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}تماس با ما {% endblock %}
+
+
+
+
+{% block content %}
+      <!------------------------start banner top---------------------------->
+
+      <section>
+        <div class="banner-top">
+          <div class="bannertop-content">
+            <div>
+              <p>تماس با ما</p>
+              <div class="text-center">
+                <a href="{% url "home:index" %}">خانه</a>
+                <span class="bannertop-icon"
+                  ><i class="fa-solid fa-angle-left"></i></span
+                ><span class="bannertop-index">تماس با ما</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--------------------------end banner top---------------------------------->
+
+      <!------------------------start contact --------------------------->
+      <section class="level callus-section">
+        <div class="r-container">
+          <div class="row row-cols-1 row-cols-lg-2 g-5">
+            <div class="col">
+              <p class="title2">اطلاعات تماس ما</p>
+              <p class="callus-caption">
+                در هر زمان با ما تماس بگیرید یا پیام دهید ، ما تلاش می کنیم طی
+                24 ساعت در روزهای کاری به تمام سوالات پاسخ دهیم. خوشحال خواهیم
+                شد که به سؤالات شما پاسخ دهیم.
+              </p>
+              <ul>
+                <li>
+                  <div class="d-flex">
+                    <span class="list-icon"
+                      ><i class="fa-solid fa-location-dot"></i></span
+                    ><span class="list-title">آدرس ما:</span>
+                  </div>
+                  <p class="list-subtitle">
+                    {{ site_settings.company_address }}
+                  </p>
+                </li>
+
+                <li>
+                  <div class="d-flex">
+                    <span class="list-icon"
+                      ><i class="fa-solid fa-envelope"></i></span
+                    ><span class="list-title">صندوق پستی ما :</span>
+                  </div>
+                  <p class="list-subtitle">{{ site_settings.company_email }}</p>
+                </li>
+                <li>
+                  <div class="d-flex">
+                    <span class="list-icon"
+                      ><i class="fa-solid fa-phone-volume"></i></span
+                    ><span class="list-title">تماس با ما :</span>
+                  </div>
+                  <p class="list-subtitle">{{ site_settings.company_phone }}</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col callus-form">
+              <p class="title2">با ما در ارتباط باشید</p>
+              <div class="shadow rounded-3 py-5 px-4">
+                <form action="">
+                  <div class="mb-4">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="نام شما"
+                      aria-label="Last name"
+                    />
+                  </div>
+
+                  <div class="mb-4">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="exampleFormControlInput1"
+                      placeholder="ایمیل شما"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <textarea
+                      class="form-control"
+                      placeholder="متن پیام..."
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <button type="button" class="btn-color">ارسال پیام</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- -----------------------end contact -------------------------------- -->
+ {% endblock %}

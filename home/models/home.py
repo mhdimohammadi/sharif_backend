@@ -81,6 +81,11 @@ class Home(models.Model):
         verbose_name= 'فعالی/غیر فعالی سایت'
     )
 
+    company_address = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name= "آدرس شرکت",
+    )
 
     class Meta:
         verbose_name = "صفحه اصلی"

@@ -18,7 +18,7 @@
             <div class="carousel-caption">
               <h5>{{ site_settings.main_title }}</h5>
               <p>{{ site_settings.short_description }}</p>
-              <a href="contact1.html"><button class="btn-color">با ما تماس بگیرید</button></a>
+              <a href="{% url "home:contact_us" %}"><button class="btn-color">با ما تماس بگیرید</button></a>
             </div>
             <div class="curtain"></div>
 
@@ -182,47 +182,21 @@
             گرافیک است</p>
 
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2  row-cols-lg-4  g-4 parent-card-services mt-5">
+            {% for service in services %}
             <div class="col services ">
               <div class="card h-100">
-                <span class="icon-services"><i class="fa-solid fa-pen-to-square"></i></span>
+                {{ service.get_icon }}
                 <div class="card-body">
-                  <p class="card-title ">کد نویسی استاندارد</p>
-                  <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                    گرافیک
-                    است</p>
+                  <p class="card-title ">{{ service.title }}</p>
+                  <p class="card-text">
+                      {% if service.description %}
+                      {{ service.description }}
+                      {% endif %}
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="col services">
-              <div class="card h-100">
-                <span class="icon-services"><i class="fa-solid fa-table"></i> </span>
-                <div class="card-body">
-                  <p class="card-title ">کاملا واکنش گرا</p>
-                  <p class="card-text ">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                    گرافیک است</p>
-                </div>
-              </div>
-            </div>
-            <div class="col services">
-              <div class="card h-100">
-                <span class="icon-services"><i class="fa-solid fa-gears"></i></span>
-                <div class="card-body">
-                  <p class="card-title ">شخصی سازی آسان</p>
-                  <p class="card-text ">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                    گرافیک است</p>
-                </div>
-              </div>
-            </div>
-            <div class="col services">
-              <div class="card h-100">
-                <span class="icon-services"><i class="fa-solid fa-thumbs-up"></i></span>
-                <div class="card-body">
-                  <p class="card-title ">طراحی جذاب</p>
-                  <p class="card-text ">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                    گرافیک است</p>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -243,7 +217,7 @@
             </div>
           </div>
           <div class="call-us">
-            <a href="contact1.html" class="text-white">
+            <a href="{% url "home:contact_us" %}" class="text-white">
               <span>با ما تماس بگیرید</span>
             </a>
           </div>
