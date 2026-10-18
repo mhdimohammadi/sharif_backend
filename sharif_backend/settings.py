@@ -34,10 +34,10 @@ INSTALLED_APPS = [
     'team.apps.TeamConfig',
     'projects.apps.ProjectsConfig',
     'our_service.apps.OurServiceConfig',
+    'ticket.apps.TicketConfig',
 
     # My Packages
     'django_jalali',
-
 
 
 ]
