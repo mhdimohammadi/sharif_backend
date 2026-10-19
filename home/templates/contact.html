@@ -71,22 +71,25 @@
             <div class="col callus-form">
               <p class="title2">با ما در ارتباط باشید</p>
               <div class="shadow rounded-3 py-5 px-4">
-                <form action="">
+                <form method="post">
+                  {% csrf_token %}
                   <div class="mb-4">
                     <input
                       type="text"
                       class="form-control"
                       placeholder="نام شما"
                       aria-label="Last name"
+                      name = "author"
                     />
                   </div>
 
                   <div class="mb-4">
                     <input
-                      type="email"
+                      type="text"
                       class="form-control"
                       id="exampleFormControlInput1"
-                      placeholder="ایمیل شما"
+                      placeholder="شماره تلفن شما"
+                      name = "phone_number"
                     />
                   </div>
 
@@ -96,9 +99,15 @@
                       placeholder="متن پیام..."
                       id="exampleFormControlTextarea1"
                       rows="3"
+                      name="message"
                     ></textarea>
                   </div>
-                  <button type="button" class="btn-color">ارسال پیام</button>
+                  <button type="submit" class="btn-color">ارسال پیام</button>
+                  {% if error %}
+                      <div class="alert alert-danger">
+                          {{ error }}
+                      </div>
+                  {% endif %}
                 </form>
               </div>
             </div>
