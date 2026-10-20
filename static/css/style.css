@@ -3391,3 +3391,36 @@ option {
   .logo-item { margin: 0 1.2rem; }
   .logo-item img { height: 50px; }
 }
+
+
+
+/* اصلاح چیدمان آدرس در فوتر */
+.footer .footer-address {
+    margin-right: 0;
+    padding-left: 3em;
+}
+.footer .footer-address .title-footer {
+    margin-right: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: var(--color-two);
+    font-family: 'Vazir-Bold';
+}
+
+.footer .footer-address .footer-address-text {
+    color: #a5aeb8;
+    font-size: 0.95em;
+    font-weight: 500;
+    line-height: 2;
+    text-align: right;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* تنظیم نمایش در موبایل */
+@media (max-width: 767.98px) {
+    .footer .footer-address {
+        padding-left: 0;
+        margin-right: 0;
+    }
+}

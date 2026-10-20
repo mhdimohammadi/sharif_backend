@@ -28,16 +28,16 @@
           <div class="list-footer-right">
             <p class="title-footer mr">دسترسی سریع</p>
             <ul>
-              <a href="index.html">
+              <a href="{% url 'home:index' %}">
                 <li>صفحه اصلی</li>
               </a>
-              <a href="services1.html">
+              <a href="{% url 'our_service:service' %}">
                 <li>خدمات ما</li>
               </a>
-              <a href="contact1.html">
+              <a href="{% url 'home:contact_us' %}">
                 <li>تماس با ما</li>
               </a>
-              <a href="projects.html">
+              <a href="{% url 'projects:projects' %}">
                 <li>پروژه ها</li>
               </a>
             </ul>
@@ -45,35 +45,12 @@
         </div>
 
         <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-          <div class="list-footer-left">
-            <p class="title-footer mr">خدمات شرکت</p>
-            <ul>
-              <a href="blog-details.html">
-                <li>جزئیات وبلاگ</li>
-              </a>
-              <a href="project -details.html">
-                <li>جزئیات پروژه</li>
-              </a>
-              <a href="questions1.html">
-                <li>سوالات متداول</li>
-              </a>
-              <a href="blog-grid.html">
-                <li>وبلاگ</li>
-              </a>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-6 col-12">
-          <p class="title-footer">عضویت در خبرنامه</p>
-          <p>برای دریافت جدیدترین اخبار و به روز رسانی ها در لیست ایمیل ما مشترک شوید.</p>
-          <form action="" class="position-relative">
-            <div class="mb-3">
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="آدرس ایمیل">
-              <button type="button" class="btn btn-warning text-white position-absolute top-0 start-0 h-100"><i
-                  class="fa-solid fa-envelope"></i></button>
+            <div class="list-footer-left footer-address">
+                <p class="title-footer">آدرس شرکت</p>
+                <p class="footer-address-text">
+                    {{ site_settings.company_address }}
+                </p>
             </div>
-          </form>
         </div>
 
       </div>
