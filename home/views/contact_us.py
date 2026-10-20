@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.core.exceptions import ValidationError
+from django.contrib import messages
 
 from ticket.models import TicketModel
 
@@ -12,9 +13,11 @@ def contact_us(request):
         message = request.POST.get("message", "").strip()
 
         if not author or not phone_number or not message:
-            return render(request, "contact.html", {
-                "error": "لطفاً تمام فیلدها را تکمیل کنید."
-            })
+            messages.error(
+                request,
+                "لطفاً تمام فیلدها را تکمیل کنید."
+            )
+            return redirect("home:contact_us")
 
         _ticket = TicketModel(
             author=author,
@@ -24,13 +27,20 @@ def contact_us(request):
 
         try:
             _ticket.full_clean()
+
         except ValidationError as e:
-            return render(request, "contact.html", {
-                "error": e.messages[0],
-            })
+            for error in e.messages:
+                messages.error(request, error)
+
+            return redirect("home:contact_us")
+
         _ticket.save()
+
+        messages.success(
+            request,
+            "تیکت شما با موفقیت ثبت شد."
+        )
 
         return redirect("home:contact_us")
 
-    else:
-        return render(request, "contact.html")
+    return render(request, "contact.html")

@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-
+from django_jalali.db import models as jmodels
 
 
 
@@ -37,14 +37,14 @@ class Ticket(models.Model):
         default=Status.OPEN,
     )
 
-    created_at = models.DateTimeField(
+    created_at = jmodels.jDateTimeField(
         auto_now_add=True,
         verbose_name= "تاریخ ایجاد",
         null=True,
         blank=True,
     )
 
-    updated_at = models.DateTimeField(
+    updated_at = jmodels.jDateTimeField(
         auto_now=True,
         verbose_name= "تاریخ به روزرسانی",
         null=True,
