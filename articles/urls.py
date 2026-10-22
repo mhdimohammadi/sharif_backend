@@ -9,5 +9,6 @@ app_name = "articles"
 urlpatterns = [
     path("", views.articles, name="articles"),
     path("<int:pk>", views.article_detail, name="article_detail"),
+    path("search_result", views.search_article, name="search_article"),
 
 ]

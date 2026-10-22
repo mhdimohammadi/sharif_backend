@@ -83,10 +83,11 @@
                 </li>
                   
               </ul>
-              <form class="position-relative form-nav-desk" role="search">
+              <form class="position-relative form-nav-desk" role="search" method="get"
+                    action="{% url  'articles:search_article' %}">
                 <input class="form-control me-2  input-navbar" type="search" placeholder="جستجو..."
-                  aria-label="Search">
-                <span class="icon-input "><i class="fa-solid fa-magnifying-glass"></i></span>
+                  aria-label="Search" name="query">
+                <button type="submit" class="icon-input "><i class="fa-solid fa-magnifying-glass"></i></button>
               </form>
             </div>
             {% if request.user.is_authenticated and request.user.is_superuser %}
