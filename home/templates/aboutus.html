@@ -82,72 +82,63 @@
       </section>
       <!-- -------------------------- end timeline section ----------------------- -->
       <!-- ---------------------------start banner----------------------------->
-      <section>
-        <div class="banner level">
-          <div class="r-container">
-            <div class="content-banner position-relative z-2 p-banner">
-              <div class="row row-cols-1 row-cols-md-4 row-cols-sm-2 g-4 pt-5">
-                <div class="col">
-                  <div class="card h-100 text-center bg-transparent py-4">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-center">
-                        <span class="text-warning"
-                          ><i class="fa-solid fa-people-group"></i
-                        ></span>
-                        <p id="customersCounter" class="card-title">0</p>
-                      </div>
+    <section>
+      <div class="banner level">
+        <div class="r-container">
 
-                      <p class="card-text text-white">مشتریان راضی</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 bg-transparent py-4">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-center">
-                        <span class="text-warning"
-                          ><i class="fa-solid fa-briefcase"></i
-                        ></span>
-                        <p id="projectsCounter" class="card-title">0</p>
-                      </div>
 
-                      <p class="card-text text-white">پروژه انجام شده</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 bg-transparent py-4">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-center">
-                        <span class="text-warning"
-                          ><i class="fa-solid fa-handshake"></i
-                        ></span>
-                        <p id="partnersCounter" class="card-title">0</p>
-                      </div>
+          <div class="content-banner position-relative z-2  p-banner">
+            <h2>پروژه ها</h2>
+            <p class="text-justify py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+              طراحان
+              گرافیک است.
+              چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+              کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
 
-                      <p class="card-text text-white">شرکای تجاری</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 bg-transparent py-4">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-center">
-                        <span class="text-warning"
-                          ><i class="fa-solid fa-building"></i
-                        ></span>
-                        <p id="currentProjectsCounter" class="card-title">0</p>
-                      </div>
 
-                      <p class="card-text text-white">پروژه های فعلی</p>
-                    </div>
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4 mb-3 banner-stats">
+
+            <div class="col">
+              <div class="card h-100 text-center bg-transparent py-4">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <span>
+                      <i class="fa-solid fa-briefcase"></i>
+                    </span>
+                    <p id="projectsCounter" class="card-title mb-0" data-target="{{ done_projects_count }}">0</p>
                   </div>
+
+                  <p class="card-text text-white mt-3 mb-0">
+                    پروژه انجام شده
+                  </p>
                 </div>
               </div>
             </div>
+
+            <div class="col">
+              <div class="card h-100 text-center bg-transparent py-4">
+                <div class="card-body">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <span>
+                      <i class="fa-solid fa-building"></i>
+                    </span>
+                    <p id="currentProjectsCounter" class="card-title mb-0" data-target="{{ ongoing_projects_count }}">0</p>
+                  </div>
+
+                  <p class="card-text text-white mt-3 mb-0">
+                    پروژه های فعلی
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
           </div>
         </div>
-      </section>
+      </div>
+    </section>
       <!-- ---------------------------end banner---------------------------->
 
       <!-- ---------------------------start our features--------------------->

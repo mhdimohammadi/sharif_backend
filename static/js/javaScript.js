@@ -18,16 +18,22 @@ function topFunction () {
 document.addEventListener('DOMContentLoaded', function () {
   var pageElement = document.querySelector('#home1,#home4,#about-us')
   if (pageElement) {
-    animateCounter('customersCounter', 80)
-    animateCounter('projectsCounter', 200)
-    animateCounter('partnersCounter', 130)
-    animateCounter('currentProjectsCounter', 90)
+    animateCounter('projectsCounter')
+    animateCounter('currentProjectsCounter')
   }
 })
 
-function animateCounter (elementId, targetValue) {
+function animateCounter(elementId, targetValue) {
   var currentValue = 0
   var counterElement = document.getElementById(elementId)
+
+  if (!counterElement) {
+    return
+  }
+
+  if (targetValue === undefined) {
+    targetValue = Number(counterElement.dataset.target)
+  }
 
   var intervalId = setInterval(function () {
     if (currentValue < targetValue) {
@@ -36,7 +42,7 @@ function animateCounter (elementId, targetValue) {
     } else {
       clearInterval(intervalId)
     }
-  }, 10)
+  }, 50)
 }
 // ---------------------------counter up-----------------------------------
 

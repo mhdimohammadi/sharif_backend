@@ -11,6 +11,10 @@ class Project(models.Model):
 
     objects = jmodels.jManager()
 
+    class Status(models.TextChoices):
+        DONE = 'done' , 'تمام شده',
+        ONGOING = 'ongoing','در حال انجام'
+
     name = models.CharField(
         max_length=100,
         verbose_name="نام پروژه",
@@ -46,6 +50,13 @@ class Project(models.Model):
     is_active = models.BooleanField(
         default=True,
         verbose_name= "فعالی/غیر فعالی",
+    )
+
+    status = models.CharField(
+        max_length=50,
+        choices=Status.choices,
+        default=Status.ONGOING,
+        verbose_name= "وضعیت پروژه",
     )
 
     cover_image = models.ImageField(
