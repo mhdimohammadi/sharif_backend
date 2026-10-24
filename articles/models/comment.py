@@ -2,7 +2,7 @@ from django.db import models
 
 from articles.models import ArticleModel
 
-
+from django_jalali.db import models as jmodels
 
 
 class Comment(models.Model):
@@ -15,9 +15,14 @@ class Comment(models.Model):
 
     )
 
-    replies = models.ForeignKey(
+
+    parent = models.ForeignKey(
         'self',
         on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='replies',
+        verbose_name="پاسخ به کامنت",
     )
 
     author = models.CharField(
@@ -29,12 +34,12 @@ class Comment(models.Model):
         verbose_name="متن کامنت"
     )
 
-    created_at = models.DateTimeField(
+    created_at = jmodels.jDateTimeField(
         auto_now_add=True,
         verbose_name="تاریخ ایجاد",
     )
 
-    updated_at = models.DateTimeField(
+    updated_at = jmodels.jDateTimeField(
         auto_now=True,
         verbose_name="تاریخ به روزرسانی",
     )

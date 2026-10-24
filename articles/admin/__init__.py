@@ -1,1 +1,1 @@
-from articles.admin import article
+from articles.admin import article,comment

@@ -3434,3 +3434,37 @@ option {
     color: inherit;
     font: inherit;
 }
+
+
+/*comment style*/
+.box-comment {
+    padding: 18px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+}
+
+.comment-reply {
+    margin-top: 14px;
+    background-color: #f1f1f1;
+    border-color: #dddddd;
+}
+
+.reply-to {
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #666666;
+}
+
+.reply-button {
+    border: none;
+    background: transparent;
+    color: #555555;
+    cursor: pointer;
+    padding: 0;
+}
+
+.reply-form-slot:empty {
+    display: none;
+}

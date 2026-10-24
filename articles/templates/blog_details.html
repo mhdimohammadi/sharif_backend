@@ -18,7 +18,7 @@
               <span class="bannertop-icon"><i class="fa-solid fa-angle-left"></i></span>
               <a href="{% url "articles:articles" %}">وبلاگ</a><span class="bannertop-icon"><i
                   class="fa-solid fa-angle-left"></i></span>
-              <span class="bannertop-index">جزئیات وبلاگ</span>
+              <span class="bannertop-index">{{article.title}}</span>
             </div>
           </div>
 
@@ -36,10 +36,10 @@
 
           <div class="col-lg-4 mt-5 ">
             <div class="sidebar">
-              <form action="" class="position-relative">
+              <form action="{% url 'articles:search_article' %}" class="position-relative" method="get">
                 <div class="mb-3">
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="جستجو..." />
-                  <button type="button" class=" btn-search h-100">
+                  <input name="query" type="text" class="form-control" id="exampleFormControlInput1" placeholder="جستجو..." />
+                  <button type="submit" class=" btn-search h-100">
                     <i class="fa-solid fa-search"></i>
                   </button>
                 </div>
@@ -73,7 +73,6 @@
               <li>
                 <i class="fa-solid fa-calendar-days "></i><span>{{ article.created_at|date:"Y/m/d" }}</span>
               </li>
-              <li><i class="fa-solid fa-comments "></i><span>1 دیدگاه</span></li>
             </ul>
 
             <div class="text-justify">
@@ -85,59 +84,128 @@
 
               <div>
                 <span><i class="fa-solid fa-comments"></i></span>
-                <span class="fw-bold me-2">1 نظر</span>
+                <span class="fw-bold me-2">{{comments_count}} نظر</span>
               </div>
 
 
               <hr>
-              <div class="box-comment">
-                <div class="d-flex justify-content-between">
-                  <span class="fw-bold">سعید قربانی</span>
-                  <span>2 اسفند 1402</span>
-                </div>
-                <p class="comment">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                  گرافیک
-                  است.
-                  چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
-                  نیاز
-                  و
-                  کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
-                <div class="reply"><span><i class="fa-solid fa-reply"></i><span class="me-1">پاسخ</span></span></div>
-
-
+              <div id="comments">
+                {% for comment in comments %}
+                  {% include "partials/comment_item.html" with comment=comment %}
+                {% empty %}
+                  <p>هنوز دیدگاهی ثبت نشده است.</p>
+                {% endfor %}
               </div>
+              <hr>
 
+              <div id="comment-form-home"></div>
 
-              <div class=" comment-form">
-                <p>دیدگاه خود را ارسال کنید</p>
-                <p class="text-justify">نظر خود را برای این مطلب ارسال کنید. نشانی ایمیل شما منتشر نخواهد شد.</p>
-                <div class="shadow rounded-3 py-5 px-4 mt-5">
-                  <form action="" method="post">
+              <div id="comment-form-wrapper">
+                <div class="comment-form shadow rounded-3 py-4 px-4 mt-3">
+
+                  <p id="comment-form-title">دیدگاه خود را ارسال کنید</p>
+
+                  <form action="{% url 'articles:post_comment' %}" method="post">
                     {% csrf_token %}
 
-                    <div class="row row-cols-1 row-cols-md-2">
+                    <input
+                      type="hidden"
+                      name="article_id"
+                      value="{{ article.pk }}"
+                    >
 
-                      <div class="col mb-4">
-                        <input type="text" class="form-control" placeholder="نام شما" aria-label="Last name" name="author">
-                      </div>
+                    <input
+                      type="hidden"
+                      name="parent_id"
+                      id="parent-id"
+                      value=""
+                    >
+
+                    <div class="mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="نام شما"
+                        name="author"
+                        maxlength="100"
+                        required
+                      >
                     </div>
 
                     <div class="mb-3">
-                      <textarea class="form-control" placeholder="متن دیدگاه ..." id="exampleFormControlTextarea1"
-                        rows="3" name="text"></textarea>
+                      <textarea
+                        class="form-control"
+                        placeholder="متن دیدگاه ..."
+                        name="text"
+                        rows="3"
+                        required
+                      ></textarea>
                     </div>
-                    <button type="submit" class="btn-color">ارسال دیدگاه</button>
 
+                    <button type="submit" class="btn-color">
+                      ارسال دیدگاه
+                    </button>
+
+                    <button type="button" id="cancel-reply" class="btn btn-secondary">
+                      انصراف از پاسخ
+                    </button>
                   </form>
+
                 </div>
-
               </div>
-
 
             </div>
           </div>
         </div>
     </section>
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const formWrapper = document.getElementById("comment-form-wrapper");
+    const formHome = document.getElementById("comment-form-home");
+    const parentInput = document.getElementById("parent-id");
+    const formTitle = document.getElementById("comment-form-title");
+    const cancelButton = document.getElementById("cancel-reply");
+
+    document.addEventListener("click", function (event) {
+        const replyButton = event.target.closest(".reply-button");
+
+        if (!replyButton) {
+            return;
+        }
+
+        const commentId = replyButton.dataset.commentId;
+        const author = replyButton.dataset.author;
+
+        const comment = replyButton.closest(".box-comment");
+        const slot = comment.querySelector(".reply-form-slot");
+
+        if (!slot) {
+            return;
+        }
+
+        parentInput.value = commentId;
+        formTitle.textContent = `پاسخ به ${author}`;
+
+        slot.appendChild(formWrapper);
+
+        formWrapper.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    });
+
+    cancelButton.addEventListener("click", function () {
+        parentInput.value = "";
+        formTitle.textContent = "دیدگاه خود را ارسال کنید";
+
+        formHome.appendChild(formWrapper);
+    });
+});
+
+</script>
 
     <!-- -------------------------end blog details---------------------------------->
 {% endblock %}

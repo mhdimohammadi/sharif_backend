@@ -1,0 +1,37 @@
+
+<div class="box-comment {% if comment.parent_id %}comment-reply{% endif %}"
+     id="comment-{{ comment.pk }}">
+
+  {% if comment.parent_id %}
+    <div class="reply-to">
+      <i class="fa-solid fa-reply"></i>
+      پاسخ به {{ comment.parent.author }}
+    </div>
+  {% endif %}
+
+  <div class="d-flex justify-content-between">
+    <span class="fw-bold">{{ comment.author }}</span>
+    <span>{{ comment.created_at|date:"Y/m/d" }}</span>
+  </div>
+
+  <p class="comment">{{ comment.text }}</p>
+
+  <button
+    type="button"
+    class="reply-button"
+    data-comment-id="{{ comment.pk }}"
+    data-author="{{ comment.author }}"
+  >
+    <i class="fa-solid fa-reply"></i>
+    پاسخ
+  </button>
+
+  <div class="reply-form-slot"></div>
+
+  {% for reply in comment.replies.all %}
+    {% if reply.is_active %}
+      {% include "partials/comment_item.html" with comment=reply %}
+    {% endif %}
+  {% endfor %}
+
+</div>

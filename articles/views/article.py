@@ -1,8 +1,8 @@
-from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import Count
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from articles.models import ArticleModel
+from articles.models import ArticleModel,CommentModel
 
 
 
@@ -52,10 +52,21 @@ def article_detail(request, pk):
         .order_by('-created_at')[:8]
     )
 
+    comments = article.comments.filter(
+        parent__isnull=True,
+        is_active=True,
+    )
+
+    comments_count = CommentModel.objects.filter(
+        is_active=True,
+        article=article
+    ).count()
 
     context = {
         "article": article,
         "latest_articles": latest_articles,
+        "comments": comments,
+        "comments_count": comments_count,
     }
 
     return render(request,"blog_details.html",context)
