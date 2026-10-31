@@ -2,8 +2,6 @@ from django.db import models
 
 
 
-
-
 class Home(models.Model):
 
     main_title = models.CharField(
@@ -94,3 +92,66 @@ class Home(models.Model):
 
     def __str__(self):
         return self.main_title
+
+
+
+
+class Banner(models.Model):
+
+    home_page = models.ImageField(
+        upload_to="banners",
+        verbose_name='بنر صفحه اصلی',
+    )
+
+    article_page = models.ImageField(
+        upload_to="banners",
+        verbose_name='بنر صفحه مقالات',
+    )
+
+    article_search_page = models.ImageField(
+        upload_to="banners",
+        verbose_name="بنر صفحه جستو جوی مقاله",
+    )
+
+    article_detail_page = models.ImageField(
+        upload_to="banners",
+        verbose_name='بنر صفحه جزئیات مقاله',
+    )
+
+    project_page = models.ImageField(
+        upload_to="banners",
+        verbose_name="بنر صفحه پروژه ها",
+    )
+
+    project_detail_page = models.ImageField(
+        upload_to="banners",
+        verbose_name="بنر صفحه جزئیات پروژه",
+    )
+
+    contact_page = models.ImageField(
+        upload_to="banners",
+        verbose_name="بنر صفحه تماس با ما",
+    )
+
+    about_page = models.ImageField(
+        upload_to="banners",
+        verbose_name="بنر صفحه درباره ما",
+    )
+
+    service_page = models.ImageField(
+        upload_to="banners",
+        verbose_name= "بنر صفحه خدمات ما"
+    )
+
+    team_page = models.ImageField(
+        upload_to="banners",
+        verbose_name="بنر صفحه تیم ما"
+    )
+
+
+    def __str__(self):
+        return f"تنظیمات بنر شماره {self.id}"
+
+    class Meta:
+        verbose_name = "بنر"
+        verbose_name_plural = "بنرها"
