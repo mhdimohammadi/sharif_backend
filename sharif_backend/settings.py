@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -130,15 +131,23 @@ USE_TZ = True
 
 
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [
+        BASE_DIR / 'assets',
+    ]
+    MEDIA_URL = 'media/'
+    MEDIA_ROOT = 'media/'
+else:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = '/home/raymands/public_html/static'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-
-MEDIA_URL = "media/"
-MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = '/home/raymands/public_html/media'
+    # Ensure media directory exists
+    if not os.path.exists(MEDIA_ROOT):
+        os.makedirs(MEDIA_ROOT)
 
 
 
