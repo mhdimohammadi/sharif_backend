@@ -13,12 +13,12 @@
 
         <div class="carousel-inner">
           <div class="carousel-item active position-relative">
-            <img src="{{ site_settings.banner.url }}" class="d-block w-100" alt="image-slider">
+            <img src="{{ banners.home_page.url }}" class="d-block w-100" alt="image-slider">
 
             <div class="carousel-caption">
               <h5>{{ site_settings.main_title }}</h5>
               <p>{{ site_settings.short_description }}</p>
-              <a href="{% url "home:contact_us" %}"><button class="btn-color">با ما تماس بگیرید</button></a>
+
             </div>
             <div class="curtain"></div>
 
@@ -103,7 +103,7 @@
 
 
           <div class="content-banner position-relative z-2  p-banner">
-            <h2>پروژه ها</h2>
+            <h2>تحلیل‌گران فناوری رایمند شریف در یک نگاه:</h2>
             <p class="text-justify py-3">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
               طراحان
               گرافیک است.
@@ -162,9 +162,10 @@
 
         <div class="parent-services mx-auto">
           <h3 class="title">خدمات شرکت ما</h3>
-          <p class="text-center darkblue">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-            طراحان
-            گرافیک است</p>
+          <p class="text-center darkblue">راهبری و ارزیابی فناوری،
+                بازارآیی ساختار مالی،
+                توسعه بازار بین‌المللی محصولات دانش‌بنیان
+          </p>
 
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2  row-cols-lg-4  g-4 parent-card-services mt-5">
             {% for service in services %}
@@ -196,14 +197,14 @@
             <p class="Counseling-title ">مشاوره رایگان </p>
             <div class="d-flex  ">
               <span class="icon-email"><i class="fa-solid fa-envelope-open-text"></i></span>
-              <p class="text-justify mx-2 mt-2">با ما تماس بگیرید یا ایمیل برای دریافت مشاوره رایگان پروژه خودارسال
-                کنید.
+              <p class="text-justify mx-2 mt-2">
+                  جهت دریافت مشاوره رایگان با ما تماس بگیرید.
               </p>
             </div>
           </div>
           <div class="call-us">
             <a href="{% url "home:contact_us" %}" class="text-white">
-              <span>با ما تماس بگیرید</span>
+              <span>تماس با ما</span>
             </a>
           </div>
         </div>
@@ -278,7 +279,7 @@
     <!-- ---------------------------start blog-------------------------------- -->
       <section class="blog level">
       <div class="r-container">
-        <h3 class="title">آخرین وبلاگ و مطالب ما</h3>
+        <h3 class="title">مقاله‌ها</h3>
         <div class="swiper swiper-container">
 
           <div class="swiper-wrapper">

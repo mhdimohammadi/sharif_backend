@@ -3468,3 +3468,13 @@ option {
 .reply-form-slot:empty {
     display: none;
 }
+
+.social-bale-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}

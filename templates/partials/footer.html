@@ -6,22 +6,12 @@
       <div class=" footer d-flex flex-wrap   ">
 
         <div class="col-xl-3 col-lg-12 col-12">
-          <a href=""><img src="{% static 'images/logo.png' %}" alt="logo"></a>
-          <p class="caption-footer">{{ site_settings.footer_description }}</p>
-          <ul class=" social-footer d-flex justify-content-start align-content-center ">
             <a href="">
-              <li><i class="fa-brands fa-whatsapp"></i></li>
+                <img class="footer-logo" src="{% static 'images/logo.png' %}" alt="logo">
             </a>
-            <a href="">
-              <li><i class="fa-brands fa-instagram"></i></li>
-            </a>
-            <a href="">
-              <li><i class="fa-brands fa-linkedin-in"></i></li>
-            </a>
-            <a href="">
-              <li><i class="fa-brands fa-facebook-f"></i></li>
-            </a>
-          </ul>
+        
+            <p class="caption-footer">{{ site_settings.footer_description }}</p>
+            
         </div>
 
           <div class="col-xl-3 col-lg-3 col-md-6 col-12">
@@ -37,9 +27,7 @@
                 <a href="{% url "home:contact_us" %}">
                   <li>تماس با ما</li>
                 </a>
-                <a href="{% url "projects:projects" %}">
-                  <li>پروژه ها</li>
-                </a>
+
 
               </ul>
             </div>
@@ -68,6 +56,7 @@
   <div class="bg-theme2">
     <div class="r-container">
       <div class="copyright ">
+          <p class="mt-3">© تمامی حقوق این وبسایت برای شرکت تحلیل گران فناوری رایمند شریف محفوظ می باشد </p>
       </div>
     </div>
   </div>
