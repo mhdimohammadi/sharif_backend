@@ -28,10 +28,7 @@ class Home(models.Model):
         verbose_name= "اهداف شرکت",
     )
 
-    banner = models.ImageField(
-        upload_to="home/banners",
-        verbose_name= "بنر سایت",
-    )
+
 
     card1_title = models.CharField(
         max_length=100,

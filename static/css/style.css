@@ -3478,3 +3478,23 @@ option {
 .footer-logo {
     margin-bottom: 20px;
 }
+
+
+
+/* White Header */
+
+
+.bg-menudesktop,
+.nav-menu {
+    background-color: #ffffff !important;
+}
+
+/* Header text colors */
+
+
+
+/* Header icons */
+
+
+/* Search input */
+
