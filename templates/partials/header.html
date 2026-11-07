@@ -96,64 +96,98 @@
   </section>
   <!-- end menu desktop -->
 
-  <!-- start menu response -->
-  <nav class="navbar navbar-dark bg-transparent  nav-response  ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel">
-        <div class="offcanvas-header">
-          <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'home:index' %}" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                خانه<i class="fa-solid fa-caret-down me-1"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'team:team_members'%}">تیم ما</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle  " href="{% url 'projects:projects'%}" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                پروژه ها<i class="fa-solid fa-caret-down me-1"></i></a>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'our_service:service'%}" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                خدمات ما<i class="fa-solid fa-caret-down me-1"></i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'articles:articles'%}" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                وبلاگ<i class="fa-solid fa-caret-down me-1"></i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'home:about_us'%}" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                درباره ما<i class="fa-solid fa-caret-down me-1"></i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'home:contact_us'%}" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                تماس با ما<i class="fa-solid fa-caret-down me-1"></i></a>
-            </li>
-          </ul>
 
-          <form class="d-flex  position-relative" role="search">
-            <input class="form-control me-2 input-navbar" type="search" placeholder="جستجو..." aria-label="Search" />
-            <span class="icon-input "><i class="fa-solid fa-magnifying-glass"></i></span>
-          </form>
+<!-- start menu response -->
+<nav class="navbar navbar-dark bg-transparent nav-response">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="#"></a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar"
+                aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-end"
+             tabindex="-1"
+             id="offcanvasDarkNavbar"
+             aria-labelledby="offcanvasDarkNavbarLabel">
+
+            <div class="offcanvas-header">
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close">
+                </button>
+            </div>
+
+            <div class="offcanvas-body">
+
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home:index' %}">
+                            خانه
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'team:team_members' %}">
+                            تیم ما
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'projects:projects' %}">
+                            پروژه ها
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'our_service:service' %}">
+                            خدمات ما
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'articles:articles' %}">
+                            وبلاگ
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home:about_us' %}">
+                            درباره ما
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home:contact_us' %}">
+                            تماس با ما
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form class="d-flex position-relative" role="search">
+                    <input class="form-control me-2 input-navbar"
+                           type="search"
+                           placeholder="جستجو..."
+                           aria-label="Search">
+
+                    <span class="icon-input">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </form>
+
+            </div>
         </div>
-      </div>
     </div>
-  </nav>
-  <!-- end menu response -->
+</nav>
+<!-- end menu response -->
+
 </header>
