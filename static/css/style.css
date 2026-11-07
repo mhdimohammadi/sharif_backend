@@ -3489,12 +3489,10 @@ option {
     background-color: #ffffff !important;
 }
 
-/* Header text colors */
 
 
-
-/* Header icons */
-
-
-/* Search input */
+.nav-menu,
+.nav-menu * {
+    color: #142b4a !important;
+}
 
