@@ -112,126 +112,38 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="{% url 'home:index' %}" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 خانه<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu ">
-                <li><a class="dropdown-item " href="index.html">صفحه اصلی 1</a></li>
-                <li><a class="dropdown-item" href="index-02.html">صفحه اصلی 2</a></li>
-                <li><a class="dropdown-item" href="index-03.html">صفحه اصلی 3</a></li>
-                <li><a class="dropdown-item" href="index-04.html">صفحه اصلی 4</a></li>
-              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="team.html">تیم ما</a>
+              <a class="nav-link" href="{% url 'team:team_members'%}">تیم ما</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle  " href="projects.html" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle  " href="{% url 'projects:projects'%}" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 پروژه ها<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown px-4">
-                <li><a class="dropdown-item  " href="projects.html">پروژه ها</a></li>
-                <li><a class="dropdown-item" href="project -details.html">جزئیات پروژه</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="services1.html" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="{% url 'our_service:service'%}" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 خدمات ما<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="services1.html">خدمات ما 1</a></li>
-                <li><a class="dropdown-item" href="services2.html">خدمات ما 2</a></li>
-              </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                کاربران<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="login.html">ورود</a></li>
-                <li><a class="dropdown-item" href="rejister.html">ثبت نام</a></li>
-                <li><a class="dropdown-item" href="recovery-password.html">بازیابی رمز عبور</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="{% url 'articles:articles'%}" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 وبلاگ<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="blog-grid.html">وبلاگ شبکه ای</a></li>
-                <li><a class="dropdown-item" href="blog-sidebar.html">وبلاگ سایدبار</a></li>
-                <li><a class="dropdown-item" href="blog-details.html">جزئیات وبلاگ</a></li>
-              </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="products.html" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                فروشگاه<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="products.html">محصولات</a></li>
-                <li><a class="dropdown-item" href="product-detail.html">جزئیات محصول</a></li>
-                <li><a class="dropdown-item" href="basket.html">سبد خرید</a></li>
-                <li><a class="dropdown-item" href="empty-basket.html">سبد خرید خالی</a></li>
-                <li><a class="dropdown-item" href="bill.html">صورتحساب</a></li>
-                <li><a class="dropdown-item" href="my-account.html">حساب کاربری</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="{% url 'home:about_us'%}" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 درباره ما<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="aboutus1.html">درباره ما 1</a></li>
-                <li><a class="dropdown-item" href="aboutus2.html">درباره ما 2</a></li>
-              </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              <a class="nav-link dropdown-toggle" href="{% url 'home:contact_us'%}" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 تماس با ما<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="contact1.html">تماس با ما 1</a></li>
-                <li><a class="dropdown-item" href="contact2.html">تماس با ما 2</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                سوالات متداول<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="questions1.html">سوالات متداول 1</a></li>
-                <li><a class="dropdown-item" href="questions2.html">سوالات متداول 2</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle  " href="projects.html" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                زیرمنودار<i class="fa-solid fa-caret-down me-1"></i></a>
-              <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown px-4">
-                <li><a class="dropdown-item dropdown-toggle px-4" data-bs-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false" href="">زیر منودار<i class="fa-solid fa-caret-down me-1"></i></a>
-                  <ul class="dropdown-menu px-3">
-                    <li><a class="dropdown-item" href="#">زیرمنو</a></li>
-                    <li><a class="dropdown-item" href="#">زیرمنو</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="search-result.html">نتیجه جستجو</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="plan.html">تعرفه ها</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="coming-soon.html">در دست ساخت</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="privacy.html">قوانین و مقررات</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="conditions.html">حریم خصوصی</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="maintenance.html">خطا 404</a>
             </li>
           </ul>
 

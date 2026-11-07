@@ -134,7 +134,7 @@ USE_TZ = True
 if DEBUG:
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [
-        BASE_DIR / 'assets',
+        BASE_DIR / 'static',
     ]
     MEDIA_URL = 'media/'
     MEDIA_ROOT = 'media/'
