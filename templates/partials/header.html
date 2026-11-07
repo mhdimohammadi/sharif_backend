@@ -173,11 +173,13 @@
 
                 </ul>
 
-                <form class="d-flex position-relative" role="search">
+                <form class="d-flex position-relative" role="search" method="get"
+                action="{% url  'articles:search_article' %}">
                     <input class="form-control me-2 input-navbar"
                            type="search"
                            placeholder="جستجو..."
-                           aria-label="Search">
+                           aria-label="Search"
+                           name="query">
 
                     <span class="icon-input">
                         <i class="fa-solid fa-magnifying-glass"></i>
