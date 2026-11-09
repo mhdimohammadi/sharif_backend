@@ -52,7 +52,7 @@ class TimeLine(models.Model):
     )
 
     description = models.CharField(
-        max_length=100,
+        max_length=300,
         verbose_name= "توضیح تایم لاین",
         default="",
     )
