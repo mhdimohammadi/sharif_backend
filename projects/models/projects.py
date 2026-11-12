@@ -5,59 +5,38 @@ from django.templatetags.static import static
 
 
 
-
-
 class Project(models.Model):
 
     objects = jmodels.jManager()
 
-    class Status(models.TextChoices):
-        DONE = 'done' , 'تمام شده',
-        ONGOING = 'ongoing','در حال انجام'
 
     name = models.CharField(
         max_length=100,
-        verbose_name="نام پروژه",
+        verbose_name="نام خبر",
     )
 
     description = models.TextField(
-        verbose_name="توضیحات پروژه",
+        verbose_name="توضیحات خبر",
     )
 
     start_date = jmodels.jDateTimeField(
-        verbose_name="تاریخ شروع",
+        verbose_name="تاریخ",
     )
 
-    end_date = jmodels.jDateTimeField(
-        verbose_name="تاریخ پایان",
+
+    source = models.CharField(
+        max_length=300,
+        verbose_name="منبع",
+        null=True,
+        blank=True,
     )
 
-    costumer = models.CharField(
-        max_length=100,
-    verbose_name="نام و نام خانوادگی مشتری",
-    )
-
-    location = models.CharField(
-        max_length=50,
-        verbose_name="محل پروژه",
-    )
-
-    worth = models.CharField(
-        max_length=100,
-        verbose_name= "ارزش پروژه",
-    )
 
     is_active = models.BooleanField(
         default=True,
         verbose_name= "فعالی/غیر فعالی",
     )
 
-    status = models.CharField(
-        max_length=50,
-        choices=Status.choices,
-        default=Status.ONGOING,
-        verbose_name= "وضعیت پروژه",
-    )
 
     cover_image = models.ImageField(
         upload_to='projects/cover_images/',
@@ -67,18 +46,14 @@ class Project(models.Model):
     )
 
     class Meta:
-        verbose_name = "پروژه"
-        verbose_name_plural = "پروژه ها"
+        verbose_name = "خبر و رویداد"
+        verbose_name_plural = "اخبار و رویداد ها"
 
         ordering = ["-start_date"]
 
         indexes = [
             models.Index(
                 fields=['-start_date'],
-            ),
-
-            models.Index(
-                fields=['-end_date']
             ),
         ]
 
@@ -112,26 +87,26 @@ class ProjectImages(models.Model):
         Project,
         on_delete=models.CASCADE,
         related_name='images',
-        verbose_name= "پروژه",
+        verbose_name= "خبر",
     )
 
     big_image = models.ImageField(
         upload_to='projects/big_images/',
         null=True,
         blank=True,
-        verbose_name= "عکس بزرگ پروژه",
+        verbose_name= "عکس بزرگ خبر",
     )
 
     small_image1 = models.ImageField(
         upload_to='projects/small_images/',
         null=True,
         blank=True,
-        verbose_name= "عکس کوچک اول پروژه",
+        verbose_name= "عکس کوچک اول خبر",
     )
 
     big_image2 = models.ImageField(
         upload_to='projects/small_images/',
         null=True,
         blank=True,
-        verbose_name='عکس کوچک دوم پروژه',
+        verbose_name='عکس کوچک دوم خبر',
     )

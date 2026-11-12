@@ -19,7 +19,6 @@ class ProjectModelAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'start_date',
-        'end_date',
     )
 
     search_fields = (
@@ -30,5 +29,4 @@ class ProjectModelAdmin(admin.ModelAdmin):
     list_filter = [
         'is_active',
         ('start_date', JDateFieldListFilter),
-        ('end_date', JDateFieldListFilter),
     ]

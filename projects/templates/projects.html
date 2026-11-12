@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block title %}پروژه ها{% endblock %}
+{% block title %}اخبار و رویداد ها{% endblock %}
 
 
 {% block content %}
@@ -13,12 +13,12 @@
         style="background-image: url('{{ banners.project_page.url }}');">
           <div class="bannertop-content">
             <div>
-              <p>پروژه ها</p>
+              <p>اخبار و رویداد ها</p>
               <div class="text-center">
                 <a href="{% url "home:index" %}">خانه</a
                 ><span class="bannertop-icon"
                   ><i class="fa-solid fa-angle-left"></i></span
-                ><span class="bannertop-index">پروژه ها</span>
+                ><span class="bannertop-index">اخبار و رویداد ها</span>
               </div>
             </div>
           </div>
@@ -28,7 +28,7 @@
       <!-- -----------------------start list project----------------------------------->
       <section class="level" style="margin-top: 6em">
         <div class="r-container">
-          <h3 class="title">پروژه های انجام شده ما</h3>
+          <h3 class="title">اخبار و رویداد ها</h3>
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3 projects">
             {% for project in projects %}
             <div class="col position-relative">

@@ -11,15 +11,15 @@
 
         <div class="bannertop-content">
           <div>
-            <p> جزئیات پروژه</p>
+            <p>{{ project.name }}</p>
             <div class="text-center">
               <a href="{% url 'home:index' %}">خانه</a>
               <span class="bannertop-icon">
                 <i class="fa-solid fa-angle-left"></i></span>
-              <a href="{% url 'projects:projects' %}">پروژه ها</a>
+              <a href="{% url 'projects:projects' %}">اخبار و رویداد ها</a>
               <span class="bannertop-icon">
                 <i class="fa-solid fa-angle-left"></i></span>
-              <span class="bannertop-index">جزئیات پروژه</span>
+              <span class="bannertop-index">{{ project.name }}</span>
             </div>
           </div>
 
@@ -70,34 +70,17 @@
               <div class=" mt-4">
                 <div class="d-flex">
                   <span class="list-icon"><i class="fa-solid fa-user"></i></span>
-                  <span class="list-title">مشتری</span>
+                  <span class="list-title">منبع</span>
                 </div>
-                <span class="list-subtitle">{{ project.costumer }}</span>
-              </div>
-
-              <div class=" mt-4">
-                <div class="d-flex">
-                  <span class="list-icon"><i class="fa-solid fa-money-bill"></i></span>
-                  <span class="list-title">ارزش مالی</span>
-                </div>
-                <span class="list-subtitle">{{project.worth}}</span>
-              </div>
-
-
-              <div class=" mt-4">
-                <div class="d-flex">
-                  <span class="list-icon"><i class="fa-solid fa-location-dot"></i></span>
-                  <span class="list-title">محل پروژه</span>
-                </div>
-                <span class="list-subtitle">{{ project.location }}</span>
+                <span class="list-subtitle">{{ project.source }}</span>
               </div>
 
               <div class=" mt-4">
                 <div class="d-flex">
                   <span class="list-icon"><i class="fa-solid fa-calendar"></i></span>
-                  <span class="list-title">اتمام پروژه</span>
+                  <span class="list-title">تاریخ</span>
                 </div>
-                <span class="list-subtitle">{{ project.end_date|date:"Y/m/d" }}</span>
+                <span class="list-subtitle">{{ project.start_date|date:"Y/m/d" }}</span>
               </div>
 
             </div>

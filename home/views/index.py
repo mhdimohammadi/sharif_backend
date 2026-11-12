@@ -4,7 +4,7 @@ from team.models import  TeamModel
 from projects.models import ProjectModel
 from home.models import IconModel
 from our_service.models import ServiceModel
-from django.db.models import Count,Q
+
 
 
 def index(request):
@@ -19,21 +19,7 @@ def index(request):
 
     projects = ProjectModel.objects.filter(is_active=True)
 
-    latest_projects = projects.order_by('-end_date')[:6]
-
-    project_stats = projects.aggregate(
-        done_count=Count(
-            'id',
-            filter=Q(status=ProjectModel.Status.DONE)
-        ),
-        ongoing_count=Count(
-            'id',
-            filter=Q(status=ProjectModel.Status.ONGOING)
-        ),
-    )
-
-    done_projects_count = project_stats['done_count']
-    ongoing_projects_count = project_stats['ongoing_count']
+    latest_projects = projects.order_by('-start_date')[:6]
 
     icons = IconModel.objects.filter(
         is_active=True
@@ -47,8 +33,6 @@ def index(request):
         "latest_projects": latest_projects,
         "icons": icons,
         "services": services,
-        "done_projects_count": done_projects_count,
-        "ongoing_projects_count": ongoing_projects_count,
     }
 
     return render(request,"index.html", context)
