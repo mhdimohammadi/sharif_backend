@@ -3496,3 +3496,92 @@ option {
     color: #142b4a !important;
 }
 
+/* یکسان‌سازی کارت‌های مقالات صفحه اصلی */
+
+.blog .swiper-slide {
+    height: auto;
+    display: flex;
+    align-items: stretch;
+}
+
+.blog .content-swiper-slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog .content-swiper-slider > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog .content-swiper-slider .more-blog {
+    margin-top: auto;
+}
+
+
+/* یکسان‌سازی کارت‌های صفحه لیست مقالات */
+
+.blog-grid .col {
+    display: flex;
+}
+
+.blog-grid .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-grid .card > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-grid .card .more-blog {
+    margin-top: auto;
+}
+
+
+/* یکسان‌سازی کارت‌های اعضای تیم */
+
+.team .row > .col {
+    display: flex;
+}
+
+.team .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* یکسان‌سازی اندازه تصاویر */
+.team .card figure {
+    width: 100%;
+    height: 260px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.team .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* یکسان‌سازی بخش محتوایی */
+.team .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* حفظ موقعیت آیکون‌های شبکه اجتماعی */
+.team .social-team {
+    margin-top: auto;
+}
