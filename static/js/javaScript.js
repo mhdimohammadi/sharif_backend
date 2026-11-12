@@ -16,26 +16,33 @@ function topFunction () {
 // //  --------------------------back to top-------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
-  var pageElement = document.querySelector('#home1,#home4,#about-us')
-  if (pageElement) {
-    animateCounter('customersCounter',  300)
-    animateCounter('projectsCounter', 7)
-    animateCounter('partnersCounter', 10)
-  }
-})
+    var pageElement = document.querySelector('#home1');
 
-function animateCounter (elementId, targetValue) {
-  var currentValue = 0
-  var counterElement = document.getElementById(elementId)
-
-  var intervalId = setInterval(function () {
-    if (currentValue < targetValue) {
-      currentValue++
-      counterElement.textContent = currentValue
-    } else {
-      clearInterval(intervalId)
+    if (pageElement) {
+        animateCounter('customersCounter');
+        animateCounter('projectsCounter');
+        animateCounter('partnersCounter');
     }
-  }, 10)
+});
+
+function animateCounter(elementId) {
+    var counterElement = document.getElementById(elementId);
+
+    if (!counterElement) {
+        return;
+    }
+
+    var targetValue = parseInt(counterElement.dataset.target) || 0;
+    var currentValue = 0;
+
+    var intervalId = setInterval(function () {
+        if (currentValue < targetValue) {
+            currentValue++;
+            counterElement.textContent = currentValue;
+        } else {
+            clearInterval(intervalId);
+        }
+    }, 10);
 }
 // ---------------------------counter up-----------------------------------
 

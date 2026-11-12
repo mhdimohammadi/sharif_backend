@@ -28,6 +28,21 @@ class Home(models.Model):
         verbose_name= "اهداف شرکت",
     )
 
+    evaluation = models.PositiveIntegerField(
+        default=0,
+        verbose_name="ارزیابی دانش بنیان"
+    )
+
+    council = models.PositiveIntegerField(
+        default=0,
+        verbose_name="مشاوره اصلاح ساختار مالی"
+    )
+
+    experience = models.PositiveIntegerField(
+        default=0,
+        verbose_name="سالِ سابقه فعالیت در اکوسیستم نوآوری"
+    )
+
 
 
     card1_title = models.CharField(
