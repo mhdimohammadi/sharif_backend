@@ -224,7 +224,7 @@ a {
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 200px;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
@@ -3585,3 +3585,24 @@ option {
 .team .social-team {
     margin-top: auto;
 }
+
+#header-dropdown{
+  background-color: #ffffff;
+}
+
+#our-service-box{
+  background-color: #e0bb66;
+}
+
+.Customers {
+    background-color: #e0bb66 !important;
+}
+
+#about-us .about-service {
+    background-color: #e0bb66;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+

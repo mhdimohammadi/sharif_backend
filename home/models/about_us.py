@@ -1,8 +1,18 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.exceptions import ValidationError
+from django.utils.html import format_html
 
 class Feature(models.Model):
+
+
+    class IconChoices(models.TextChoices):
+        SUN = "sun" , "خورشید"
+        PEOPLE = "people" , "مردم"
+        LIGHT = "light" , "لامپ"
+        HOME = "home" , "خانه"
+
+
 
     title = models.CharField(
         max_length=50,
@@ -24,6 +34,23 @@ class Feature(models.Model):
         verbose_name= "الویت نمایش",
     )
 
+    icon = models.CharField(
+        max_length=100,
+        choices=IconChoices.choices,
+        default=IconChoices.SUN,
+        verbose_name= "آیکون",
+
+    )
+
+
+    ICON_CLASSES = {
+        IconChoices.SUN: "fa-sun",
+        IconChoices.PEOPLE: "fa-users",
+        IconChoices.LIGHT: "fa-lightbulb",
+        IconChoices.HOME: "fa-house",
+
+    }
+
     class Meta:
         verbose_name = "ویژگی"
         verbose_name_plural = "ویژگی ها"
@@ -39,6 +66,11 @@ class Feature(models.Model):
 
     def __str__(self):
         return f"{self.title} : {self.description}"
+
+    @property
+    def get_icon(self):
+        icon_class = self.ICON_CLASSES.get(self.icon, "fa-sun")
+        return format_html('<span><i class="fa-solid {}"></i></span>',icon_class)
 
 
 

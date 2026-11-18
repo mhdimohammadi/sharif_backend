@@ -94,7 +94,7 @@
             {% for feature in features %}
             <div class="col">
               <div class="card h-100">
-                <span><i class="fa-solid fa-house"></i></span>
+                {{ feature.get_icon }}
                 <div class="card-body">
                   <p class="card-title">{{ feature.title }}</p>
                   <p class="card-text">{{ feature.description }}</p>
