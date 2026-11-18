@@ -3479,6 +3479,14 @@ option {
     margin-bottom: 20px;
 }
 
+.footer .footer-logo {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-right: -2em;
+    margin-top: 0;
+}
 
 
 /* White Header */
